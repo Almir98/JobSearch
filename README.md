@@ -1,0 +1,1 @@
+Angular and .NET Core application. Project in the programming phase.

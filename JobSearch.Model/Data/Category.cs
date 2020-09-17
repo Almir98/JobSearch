@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace JobSearch.WebAPI.Database
+namespace JobSearch.Model.Data
 {
     public partial class Category
     {
