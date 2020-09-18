@@ -2,7 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using JobSearch.WebAPI.Database;
+using JobSearch.WebAPI.Interface;
+using JobSearch.WebAPI.Service;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -30,7 +33,7 @@ namespace JobSearch.WebAPI
             services.AddDbContext<SearchJobContext>(c => c.UseSqlServer(Configuration.GetConnectionString("JobSearch"))
            .EnableSensitiveDataLogging());
 
-            //services.AddAutoMapper(typeof(Startup));                //Automapper configuration
+            services.AddAutoMapper(typeof(Startup));               
 
             services.AddSwaggerGen(c =>
             {
@@ -38,6 +41,9 @@ namespace JobSearch.WebAPI
             });
 
             services.AddControllers();
+
+            services.AddScoped<IService<Model.Data.City, object>, BaseService<Model.Data.City, object, Database.City>>();
+
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -51,9 +57,10 @@ namespace JobSearch.WebAPI
             app.UseRouting();
             app.UseAuthorization();
 
-            app.UseSwaggerUI(c =>
+            app.UseSwagger()
+                .UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Job Search API");
             });
 
 

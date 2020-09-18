@@ -8,8 +8,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace JobSearch.WebAPI.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
     public class BaseCRUDController<TModel, Tsearch, TInsert, TUpdate> : BaseController<TModel,Tsearch>
     {
         protected readonly ICRUDService<TModel,Tsearch,TInsert,TUpdate> _service=null;
