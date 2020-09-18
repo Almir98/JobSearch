@@ -33,6 +33,13 @@ namespace JobSearch.WebAPI
             services.AddDbContext<SearchJobContext>(c => c.UseSqlServer(Configuration.GetConnectionString("JobSearch"))
            .EnableSensitiveDataLogging());
 
+            services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
+            {
+                builder.AllowAnyOrigin()
+                       .AllowAnyMethod()
+                       .AllowAnyHeader();
+            }));
+
             services.AddAutoMapper(typeof(Startup));               
 
             services.AddSwaggerGen(c =>
@@ -52,7 +59,7 @@ namespace JobSearch.WebAPI
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            app.UseCors("MyPolicy");
             app.UseHttpsRedirection();
             app.UseRouting();
             app.UseAuthorization();
