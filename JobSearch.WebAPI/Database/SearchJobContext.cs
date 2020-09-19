@@ -282,19 +282,9 @@ namespace JobSearch.WebAPI.Database
                     .IsRequired()
                     .HasMaxLength(50);
 
-                entity.Property(e => e.PasswordHash)
-                    .IsRequired()
-                    .HasMaxLength(100);
-
-                entity.Property(e => e.PasswordSalt)
-                    .IsRequired()
-                    .HasMaxLength(100);
-
                 entity.Property(e => e.Phone)
                     .IsRequired()
                     .HasMaxLength(50);
-
-                entity.Property(e => e.TypeName).HasMaxLength(50);
 
                 entity.Property(e => e.UserTypeId).HasColumnName("UserTypeID");
 

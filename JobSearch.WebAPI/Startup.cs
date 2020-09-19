@@ -42,14 +42,13 @@ namespace JobSearch.WebAPI
 
             services.AddAutoMapper(typeof(Startup));               
 
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "My API", Version = "v1" });
-            });
+            services.AddSwaggerGen();
+
 
             services.AddControllers();
 
-            services.AddScoped<IService<Model.Data.City, object>, BaseService<Model.Data.City, object, Database.City>>();
+            services.AddScoped<IUserRepository,UserService>();
+            services.AddScoped<IService<Model.City, object>, BaseService<Model.City, object, Database.City>>();
 
         }
 

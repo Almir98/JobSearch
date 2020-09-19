@@ -11,18 +11,17 @@ namespace JobSearch.WebAPI.Database
         }
 
         public int UserId { get; set; }
-        public string TypeName { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Phone { get; set; }
         public string Email { get; set; }
         public string Adress { get; set; }
         public DateTime? YearOfBirth { get; set; }
-        public string PasswordSalt { get; set; }
-        public string PasswordHash { get; set; }
         public int? CityId { get; set; }
         public int? GenderId { get; set; }
         public int? UserTypeId { get; set; }
+        public byte[] PasswordHash { get; set; }
+        public byte[] PasswordSalt { get; set; }
 
         public virtual City City { get; set; }
         public virtual Gender Gender { get; set; }

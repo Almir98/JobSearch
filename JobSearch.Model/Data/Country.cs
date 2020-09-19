@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace JobSearch.Model.Data
+namespace JobSearch.Model
 {
     public partial class Country
     {

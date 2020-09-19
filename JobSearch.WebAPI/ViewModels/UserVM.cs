@@ -1,26 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace JobSearch.Model
+namespace JobSearch.WebAPI.ViewModels
 {
-    public partial class Users
+    public class UserVM
     {
-        public int UserId { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Phone { get; set; }
         public string Email { get; set; }
         public string Adress { get; set; }
         public DateTime? YearOfBirth { get; set; }
-        public byte[] PasswordHash { get; set; }
-        public byte[] PasswordSalt { get; set; }
         public int? CityId { get; set; }
         public int? GenderId { get; set; }
         public int? UserTypeId { get; set; }
-
-        public virtual City City { get; set; }
-        public virtual Gender Gender { get; set; }
-        public virtual UserType UserType { get; set; }
-        public virtual ICollection<Application> Application { get; set; }
+        public string Password { get; set; }
     }
 }

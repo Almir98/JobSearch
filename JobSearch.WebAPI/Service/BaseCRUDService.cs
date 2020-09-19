@@ -16,7 +16,7 @@ namespace JobSearch.WebAPI.Service
 
         public virtual TModel Insert(TInsert request)
         {
-            var entity = _mapper.Map<TDatabase>(request);
+            var entity = _mapper.Map<TDatabase>(request); 
 
             _context.Set<TDatabase>().Add(entity);
             _context.SaveChanges();

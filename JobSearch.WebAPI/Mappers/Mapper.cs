@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using JobSearch.WebAPI.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,18 +11,21 @@ namespace JobSearch.WebAPI.Mappers
     {
         public Mapper()
         {
-            CreateMap<Database.Advertisment, Model.Data.Advertisment>();
-            CreateMap<Database.AdvertismentSkill, Model.Data.AdvertismentSkill>();
-            CreateMap<Database.Application, Model.Data.Application>();
-            CreateMap<Database.Category, Model.Data.Category>();
-            CreateMap<Database.City, Model.Data.City>();
-            CreateMap<Database.Company, Model.Data.Company>();
-            CreateMap<Database.Gender, Model.Data.Gender>();
-            CreateMap<Database.JobLevel, Model.Data.JobLevel>();
-            CreateMap<Database.JobType, Model.Data.JobType>();
-            CreateMap<Database.Skill, Model.Data.Skill>();
-            CreateMap<Database.Users, Model.Data.Users>();
-            CreateMap<Database.UserType, Model.Data.UserType>();
+            CreateMap<Database.Advertisment, Model.Advertisment>().ReverseMap();
+            CreateMap<Database.AdvertismentSkill, Model.AdvertismentSkill>().ReverseMap();
+            CreateMap<Database.Application, Model.Application>().ReverseMap();
+            CreateMap<Database.Category, Model.Category>().ReverseMap();
+            CreateMap<Database.City, Model.City>().ReverseMap();
+            CreateMap<Database.Company, Model.Company>().ReverseMap();
+            CreateMap<Database.Gender, Model.Gender>().ReverseMap();
+            CreateMap<Database.JobLevel, Model.JobLevel>().ReverseMap();
+            CreateMap<Database.JobType, Model.JobType>().ReverseMap();
+            CreateMap<Database.Skill, Model.Skill>().ReverseMap();
+            CreateMap<Database.Users, Model.Users>().ReverseMap();
+            CreateMap<Database.UserType, Model.UserType>().ReverseMap();
+
+            CreateMap<UserVM, Database.Users>().ReverseMap();
+
 
         }
     }
