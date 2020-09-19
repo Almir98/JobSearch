@@ -60,7 +60,6 @@ namespace JobSearch.WebAPI.Controllers
             {
                 return Unauthorized();
             }
-
             var claims = new[]
             {
                 new Claim(ClaimTypes.NameIdentifier,userservice.UserId.ToString()),
