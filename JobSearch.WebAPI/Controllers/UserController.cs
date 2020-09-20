@@ -1,20 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
-using System.Linq;
 using System.Security.Claims;
 using System.Text;
-using System.Threading.Tasks;
-using JobSearch.WebAPI.Database;
 using JobSearch.WebAPI.Interface;
 using JobSearch.WebAPI.ViewModels;
-using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 
 namespace JobSearch.WebAPI.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class UserController : ControllerBase
@@ -28,7 +25,8 @@ namespace JobSearch.WebAPI.Controllers
             _config = config;
         }
 
-        [HttpPost("Register")]
+        [AllowAnonymous]
+        [HttpPost("register")]
         public IActionResult Register([FromBody] UserVM newUser)
         {
             if (_service.UserExist(newUser.Email))
@@ -52,7 +50,8 @@ namespace JobSearch.WebAPI.Controllers
         }
 
         //JSON WEB TOKEN 
-        [HttpPost("Login")]
+        [AllowAnonymous]
+        [HttpPost("login")]
         public IActionResult Login(UserLoginVM user)
         {
             var userservice = _service.Login(user.Email.ToLower(), user.Password);

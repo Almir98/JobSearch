@@ -1,11 +1,13 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
 using JobSearch.WebAPI.Database;
 using JobSearch.WebAPI.Interface;
 using JobSearch.WebAPI.Service;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -15,6 +17,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 
 namespace JobSearch.WebAPI
@@ -30,23 +33,34 @@ namespace JobSearch.WebAPI
 
         public void ConfigureServices(IServiceCollection services)
         {
+            //Connection string
             services.AddDbContext<SearchJobContext>(c => c.UseSqlServer(Configuration.GetConnectionString("JobSearch"))
            .EnableSensitiveDataLogging());
 
-            services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
+            services.AddCors(o => o.AddPolicy("MyPolicy", builder =>        // CORS Policy
             {
                 builder.AllowAnyOrigin()
                        .AllowAnyMethod()
                        .AllowAnyHeader();
             }));
 
-            services.AddAutoMapper(typeof(Startup));               
-
-            services.AddSwaggerGen();
-
-
+            services.AddAutoMapper(typeof(Startup));      // Automapper         
+            services.AddSwaggerGen();                    // Swagger API
             services.AddControllers();
+            
+            //JWT
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).
+                AddJwtBearer(opt => {
+                    opt.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        ValidateIssuerSigningKey = true,
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(Configuration.GetSection("AppSettings:Token").Value)),
+                        ValidateIssuer = false,
+                        ValidateAudience = false
+                    };
+                });
 
+            // Repository pattern
             services.AddScoped<IUserRepository,UserService>();
             services.AddScoped<IService<Model.City, object>, BaseService<Model.City, object, Database.City>>();
 
@@ -61,6 +75,7 @@ namespace JobSearch.WebAPI
             app.UseCors("MyPolicy");
             app.UseHttpsRedirection();
             app.UseRouting();
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseSwagger()
