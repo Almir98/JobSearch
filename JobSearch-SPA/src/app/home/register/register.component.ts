@@ -12,4 +12,10 @@ export class RegisterComponent implements OnInit {
   ngOnInit() {
   }
 
+  registerAccount()
+  {
+    
+  }
+
+
 }

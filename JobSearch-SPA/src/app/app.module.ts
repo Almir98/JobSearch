@@ -20,16 +20,21 @@ import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './home/register/register.component';
 import { ContactComponent } from './contact/contact.component';
 import { QuestionComponent } from './question/question.component';
+import { AdvertismentComponent } from './advertisment/advertisment.component';
+import { AdvertismentDetailComponent } from './advertisment/advertismentDetail/advertismentDetail.component';
+
 
 
 @NgModule({
-  declarations: [					
+  declarations: [						
     AppComponent,
       NavComponent,
       HomeComponent,
       RegisterComponent,
       ContactComponent,
-      QuestionComponent
+      QuestionComponent,
+      AdvertismentComponent,
+      AdvertismentDetailComponent
    ],
   imports: [
     BrowserModule,

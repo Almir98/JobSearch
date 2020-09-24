@@ -11,7 +11,7 @@
       <li *ngIf="loggedIn()" class="nav-item" routerLinkActive="active">
         <a class="nav-link" href="#"><i class="fa fa-user"></i> Edit profile</a>
       </li>
-      <li *ngIf="!loggedIn()" class="nav-item" routerLinkActive="active">
+      <li  class="nav-item" routerLinkActive="active">
         <a class="nav-link" [routerLink]="['/register']"><i class="fa fa-user"></i> Register</a>
       </li>
       <li *ngIf="loggedIn()" class="nav-item">
