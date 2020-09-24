@@ -4,6 +4,14 @@
     margin-bottom: 3%;
 }
 
-.container{
-    background-color: lightgray;
+.content{
+    margin-bottom: 3%;
 }
+
+p{
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+
+
