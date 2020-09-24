@@ -22,11 +22,12 @@ import { ContactComponent } from './contact/contact.component';
 import { QuestionComponent } from './question/question.component';
 import { AdvertismentComponent } from './advertisment/advertisment.component';
 import { AdvertismentDetailComponent } from './advertisment/advertismentDetail/advertismentDetail.component';
+import { AboutComponent } from './about/about.component';
 
 
 
 @NgModule({
-  declarations: [						
+  declarations: [							
     AppComponent,
       NavComponent,
       HomeComponent,
@@ -34,7 +35,8 @@ import { AdvertismentDetailComponent } from './advertisment/advertismentDetail/a
       ContactComponent,
       QuestionComponent,
       AdvertismentComponent,
-      AdvertismentDetailComponent
+      AdvertismentDetailComponent,
+      AboutComponent
    ],
   imports: [
     BrowserModule,

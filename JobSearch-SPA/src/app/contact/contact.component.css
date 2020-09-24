@@ -1,0 +1,19 @@
+#submit{
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 2%;
+}
+
+#message{
+    min-height: 150px;
+    max-height: 500px;
+}
+
+span{
+    color: red;
+}
+
+#title{
+    text-align: center;
+    margin-bottom: 3%;
+}

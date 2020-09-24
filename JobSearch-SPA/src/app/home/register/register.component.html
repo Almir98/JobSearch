@@ -1,55 +1,54 @@
 <div class="container">
-
+  <h2 id="title">Register new account</h2>
+  
   <form #newUser="ngForm" (ngSubmit)="registerAccount()">
     <div class="form-row">
       <div class="form-group col-md-6">
-        <label for="inputEmail4">First name</label>
+        <label for="inputEmail4">First name<span class="required"> *</span></label>
         <input type="email" required class="form-control" id="inputEmail4">
       </div>
       <div class="form-group col-md-6">
-        <label for="inputPassword4">Last name</label>
+        <label for="inputPassword4">Last name</label><span class="required"> *</span>
         <input type="text" required class="form-control" id="inputPassword4">
       </div>
     </div>
      <div class="form-group">
-     <label for="inputAddress">Phone</label>
+     <label for="inputAddress">Phone<span class="required"> *</span></label>
      <input type="number" class="form-control" required placeholder="+387 6x xxxx xxx">
      </div>
      <div class="form-group">
-       <label for="inputAddress2">Email</label>
+       <label for="inputAddress2">Email<span class="required"> *</span></label>
        <input type="email" class="form-control" required id="inputAddress2" placeholder="test@hotmail.com">
      </div>
      <div class="form-group">
-       <label for="inputAddress2">Adress</label>
+       <label for="inputAddress2">Adress<span class="required"> *</span></label>
        <input type="text" class="form-control" required id="inputAddress2" placeholder="">
      </div>
     <div class="form-row">
       <div class="form-group col-md-6">
-        <label for="inputEmail4">Password</label>
+        <label for="inputEmail4">Password<span class="required"> *</span></label>
         <input type="email" class="form-control" id="inputEmail4">
       </div>
       <div class="form-group col-md-6">
-        <label for="inputPassword4">Password confirm</label>
+        <label for="inputPassword4">Password confirm<span class="required"> *</span></label>
         <input type="password" class="form-control" id="inputPassword4">
       </div>
     </div>
     <div class="form-row">
       <div class="form-group col-md-6">
-        <label for="inputCity">Birth date</label>
+        <label for="inputCity">Birth date<span class="required"> *</span></label>
         <input type="date" class="form-control" id="inputCity">
       </div>
       <div class="form-group col-md-6">
-        <label for="inputState">Gender</label>
+        <label for="inputState">Gender<span class="required"> *</span></label>
         <select id="inputState" class="form-control">
-          <option selected>Choose</option>
         </select>
       </div>
     </div>
     <div class="form-row">
       <div class="form-group col-md-6">
-        <label for="inputState">City</label>
+        <label for="inputState">City<span class="required"> *</span></label>
         <select id="inputState" class="form-control">
-          <option selected>Choose</option>
         </select>
       </div>
     </div>
