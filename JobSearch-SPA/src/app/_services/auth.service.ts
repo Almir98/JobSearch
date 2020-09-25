@@ -14,7 +14,7 @@ constructor(private http:HttpClient) { }
 
 // base URL
 
-baseURL=environment.apiUrl+'auth/';
+baseURL=environment.apiUrl+'User/';
 
 helper=new JwtHelperService();
 decodedToken:any;
@@ -37,7 +37,7 @@ decodedToken:any;
 
   register(model:any)
   {
-    return this.http.post(this.baseURL+'Register',model);
+    return this.http.post(this.baseURL+'register',model);
   }
 
   loggedIn()
