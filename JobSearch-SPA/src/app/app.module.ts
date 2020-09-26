@@ -11,6 +11,8 @@ import { AuthService } from './_services/auth.service';
 import { AlertifyService } from './_services/alertify.service';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { AuthGuard } from './_guards/auth.guard';
+import { GenderService } from './_services/gender.service';
+
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -23,7 +25,6 @@ import { QuestionComponent } from './question/question.component';
 import { AdvertismentComponent } from './advertisment/advertisment.component';
 import { AdvertismentDetailComponent } from './advertisment/advertismentDetail/advertismentDetail.component';
 import { AboutComponent } from './about/about.component';
-
 
 
 @NgModule({
@@ -49,7 +50,8 @@ import { AboutComponent } from './about/about.component';
   providers: [
     AuthService,
     AlertifyService,
-    AuthGuard
+    AuthGuard,
+    GenderService
   ],
   bootstrap: [AppComponent]
 })

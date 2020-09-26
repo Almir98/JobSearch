@@ -66,7 +66,11 @@ namespace JobSearch.WebAPI
 
             // Repository pattern
             services.AddScoped<IUserRepository,UserService>();
+            
             services.AddScoped<IService<Model.City, object>, BaseService<Model.City, object, Database.City>>();
+            services.AddScoped<IService<Model.Gender, object>, BaseService<Model.Gender, object, Database.Gender>>();
+
+
 
         }
 

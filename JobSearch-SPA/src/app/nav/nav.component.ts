@@ -25,7 +25,8 @@ export class NavComponent implements OnInit {
       this.router.navigate['/home'];
 
     },error=>{
-       
+      
+      console.log(this.model);
       this.alert.error('Something went wrong');
     });
   }

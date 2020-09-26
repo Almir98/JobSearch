@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { Gender } from 'src/app/_models/Gender';
+import { AlertifyService } from 'src/app/_services/alertify.service';
+import { GenderService } from 'src/app/_services/gender.service';
 
 @Component({
   selector: 'app-register',
@@ -7,9 +11,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor() { }
+  genders:BsDropdownModule[];
 
-  ngOnInit() {
+  constructor(private genderService:GenderService,private alertify:AlertifyService) { }
+
+  ngOnInit()
+  {
+    this.loadGenders();
+  }
+
+  loadGenders()
+  {
+    this.genderService.getAll().subscribe(genders=>{
+      
+      genders.forEach(element=>{
+        var el={id:element.genderId,name:element.genderType};
+        this.genders.push(el);
+      });
+    },error=>{
+      console.log(error);
+      this.alertify.error(error);
+    })
   }
 
   registerAccount()
