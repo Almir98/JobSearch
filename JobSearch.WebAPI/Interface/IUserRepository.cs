@@ -11,5 +11,6 @@ namespace JobSearch.WebAPI.Interface
         Model.Users Register(UserVM user, string password);
         Model.Users Login(string email,string password);
         public bool UserExist(string email);
+        Model.Users GetUser(int id);
     }
 }

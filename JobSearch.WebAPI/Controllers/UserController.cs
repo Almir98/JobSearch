@@ -11,7 +11,6 @@ using Microsoft.IdentityModel.Tokens;
 
 namespace JobSearch.WebAPI.Controllers
 {
-    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class UserController : ControllerBase
@@ -49,6 +48,12 @@ namespace JobSearch.WebAPI.Controllers
             return StatusCode(201);
         }
 
+        [HttpGet("id")]
+        public Model.Users GetUser(int id)
+        {
+            return _service.GetUser(id);
+        }
+
         //JSON WEB TOKEN 
         [AllowAnonymous]
         [HttpPost("login")]
@@ -75,6 +80,7 @@ namespace JobSearch.WebAPI.Controllers
             };
             var tokenHandler = new JwtSecurityTokenHandler();
             var token = tokenHandler.CreateToken(tokenDescriptor);
+
             return Ok(new
             {
                 token = tokenHandler.WriteToken(token)

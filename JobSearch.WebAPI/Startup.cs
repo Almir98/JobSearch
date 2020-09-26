@@ -51,7 +51,12 @@ namespace JobSearch.WebAPI
             services.AddAutoMapper(typeof(Startup));      // Automapper         
             services.AddSwaggerGen();                    // Swagger API
             services.AddControllers();
-            
+
+            services.AddControllersWithViews()
+              .AddNewtonsoftJson(options =>
+                options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+                );
+
             //JWT
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).
                 AddJwtBearer(opt => {

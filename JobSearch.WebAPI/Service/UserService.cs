@@ -2,6 +2,7 @@
 using JobSearch.WebAPI.Database;
 using JobSearch.WebAPI.Interface;
 using JobSearch.WebAPI.ViewModels;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -81,6 +82,16 @@ namespace JobSearch.WebAPI.Service
                 return true;
             else
                 return false;
+        }
+
+        public Model.Users GetUser(int id)
+        {
+            var entity = _context.Users.Include(e=>e.UserType).FirstOrDefault(x => x.UserId == id);
+            if (entity!=null)
+            {
+                return _mapper.Map<Model.Users>(entity);
+            }
+            else { return null; }
         }
     }
 }

@@ -12,13 +12,13 @@
         <a class="nav-link" [routerLink]="['/about']"><i class="fa fa-info-circle"></i> About project</a>
       </li>
       <li *ngIf="loggedIn()" class="nav-item" routerLinkActive="active">
-        <a class="nav-link" href="#"><i class="fa fa-user"></i> Edit profile</a>
+        <a class="nav-link" [routerLink]="['/EditProfile']" routerLinkActive="router-link-active" ><i class="fa fa-user"></i> Edit profile</a>
       </li>
       <li  class="nav-item" routerLinkActive="active">
-        <a class="nav-link" [routerLink]="['/register']"><i class="fa fa-user"></i> Register</a>
+        <a *ngIf="!loggedIn()" class="nav-link" [routerLink]="['/register']"><i class="fa fa-user"></i> Register</a>
       </li>
       <li *ngIf="loggedIn()" class="nav-item">
-        <a class="nav-link" (click)="logout()"><i class="fa fa-sign-out"></i> Log out</a>
+        <a id="log" class="nav-link" (click)="logout()"><i class="fa fa-sign-out"></i> Log out</a>
       </li>
     </ul>
 
