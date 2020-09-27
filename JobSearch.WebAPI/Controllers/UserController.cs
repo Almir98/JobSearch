@@ -18,7 +18,7 @@ namespace JobSearch.WebAPI.Controllers
         protected readonly IUserRepository _service;
         private readonly IConfiguration _config;
 
-        public UserController(IUserRepository service,IConfiguration config)
+        public UserController(IUserRepository service, IConfiguration config)
         {
             _service = service;
             _config = config;
@@ -33,8 +33,8 @@ namespace JobSearch.WebAPI.Controllers
 
             var user = new UserVM
             {
-                FirstName=newUser.FirstName,
-                LastName=newUser.LastName,
+                FirstName = newUser.FirstName,
+                LastName = newUser.LastName,
                 Phone = newUser.Phone,
                 Email = newUser.Email,
                 Adress = newUser.Adress,
@@ -42,7 +42,7 @@ namespace JobSearch.WebAPI.Controllers
                 CityId = newUser.CityId,
                 GenderId = newUser.GenderId,
                 UserTypeId = newUser.UserTypeId,
-                Password=newUser.Password
+                Password = newUser.Password
             };
             var createdUser = _service.Register(user, newUser.Password);
             return StatusCode(201);
@@ -52,6 +52,12 @@ namespace JobSearch.WebAPI.Controllers
         public Model.Users GetUser(int id)
         {
             return _service.GetUser(id);
+        }
+
+        [HttpPut("{id}")]
+        public Model.Users Update(int id,UserUpsertVM user)
+        {
+            return _service.Update(id, user);
         }
 
         //JSON WEB TOKEN 

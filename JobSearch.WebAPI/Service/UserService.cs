@@ -2,6 +2,7 @@
 using JobSearch.WebAPI.Database;
 using JobSearch.WebAPI.Interface;
 using JobSearch.WebAPI.ViewModels;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -92,6 +93,23 @@ namespace JobSearch.WebAPI.Service
                 return _mapper.Map<Model.Users>(entity);
             }
             else { return null; }
+        }
+
+        public Model.Users Update(int id, UserUpsertVM user)
+        {
+            var entity = _context.Users.FirstOrDefault(e => e.UserId == id);
+            if (entity == null){
+                throw new Exception($"Updating user {id} failed on save");
+            }
+            else
+            {
+                _context.Users.Attach(entity);
+                _context.Users.Update(entity);
+
+                _mapper.Map(user, entity);
+                _context.SaveChanges();
+                return _mapper.Map<Model.Users>(entity);
+            }
         }
     }
 }

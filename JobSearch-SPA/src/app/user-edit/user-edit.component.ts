@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import {User} from '../_models/User';
 import { AlertifyService } from '../_services/alertify.service';
+import { AuthService } from '../_services/auth.service';
 import {UserService} from '../_services/user.service';
 
 
@@ -14,7 +15,7 @@ export class UserEditComponent implements OnInit {
 
   user:User;
 
-  constructor(private userService:UserService,private route:ActivatedRoute,private alertify:AlertifyService) { }
+  constructor(private userService:UserService,private route:ActivatedRoute,private alertify:AlertifyService,private authService:AuthService) { }
 
   ngOnInit() {
     this.loadUser();
@@ -22,11 +23,24 @@ export class UserEditComponent implements OnInit {
 
   loadUser()
   {
-    this.userService.GetUser(+this.route.snapshot.params['id']).subscribe((user:User)=>{
+    this.userService.getUser(this.authService.decodedToken.nameid).subscribe((user:User)=>{
       this.user=user;
+      console.log(user);
     },error=>{
       this.alertify.error(error);
     });
+  }
+
+  updateUser()
+  {
+    this.userService.update(this.authService.decodedToken.nameid,this.user).subscribe(next=>{
+
+      console.log(this.authService.decodedToken.nameid);
+      this.alertify.success("Profile updated successfully");
+
+    },error=>{
+      this.alertify.error(error);
+    })
   }
 
 }

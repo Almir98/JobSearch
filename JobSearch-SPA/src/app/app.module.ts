@@ -28,6 +28,7 @@ import { AboutComponent } from './about/about.component';
 import { UserEditComponent } from './user-edit/user-edit.component';
 
 
+
 @NgModule({
   declarations: [								
     AppComponent,
@@ -53,7 +54,7 @@ import { UserEditComponent } from './user-edit/user-edit.component';
     AuthService,
     AlertifyService,
     AuthGuard,
-    GenderService
+    GenderService,
   ],
   bootstrap: [AppComponent]
 })

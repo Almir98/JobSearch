@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import {User } from '../_models/User';
 import {UserUpsertModel } from '../_shared/UserUpsertModel';
+import { AuthService } from './auth.service';
 
 
 @Injectable({
@@ -12,27 +13,26 @@ export class UserService {
 
   baseUrl=environment.apiUrl+'/User';
 
-constructor(private http:HttpClient) { }
-
+constructor(private http:HttpClient,private authService:AuthService) { }
 
 getAll()
 {
   return this.http.get<User[]>(this.baseUrl);
 }
 
-GetUser(id:number)
+getUser(id:number)
 {
-  return this.http.get<User>(this.baseUrl+"/id?id="+1);
+  return this.http.get<User>(this.baseUrl+"/id?id="+this.authService.decodedToken.nameid);
 }
 
-Insert(client:UserUpsertModel)
+insert(client:UserUpsertModel)
 {
   return this.http.post(this.baseUrl,client);
 }
 
-Update(id:number,client:UserUpsertModel)
+update(id:number, user:User)
 {
-  return this.http.put(this.baseUrl+"/"+id,client);
+  return this.http.put(this.baseUrl+"/"+id,user);
 }
 
 }

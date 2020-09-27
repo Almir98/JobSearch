@@ -8,5 +8,4 @@ export interface User {
     adress:string;
 
     // passswords
-
 }

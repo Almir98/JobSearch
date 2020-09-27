@@ -1,4 +1,5 @@
 ﻿using JobSearch.WebAPI.ViewModels;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,5 +13,6 @@ namespace JobSearch.WebAPI.Interface
         Model.Users Login(string email,string password);
         public bool UserExist(string email);
         Model.Users GetUser(int id);
+        Model.Users Update(int id, UserUpsertVM user);
     }
 }
