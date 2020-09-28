@@ -1,6 +1,6 @@
 export interface User {
 
-    userid:number;
+    //userid:number;
     firstName:string;
     lastName:string;
     phone:string;

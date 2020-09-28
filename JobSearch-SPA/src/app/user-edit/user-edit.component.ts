@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import {User} from '../_models/User';
 import { AlertifyService } from '../_services/alertify.service';
 import { AuthService } from '../_services/auth.service';
@@ -14,8 +15,10 @@ import {UserService} from '../_services/user.service';
 export class UserEditComponent implements OnInit {
 
   user:User;
+  @ViewChild('editProfile') editProfile:NgForm;
 
-  constructor(private userService:UserService,private route:ActivatedRoute,private alertify:AlertifyService,private authService:AuthService) { }
+  constructor(private userService:UserService,private route:ActivatedRoute,private alertify:AlertifyService,
+    private authService:AuthService,private router:Router) { }
 
   ngOnInit() {
     this.loadUser();
@@ -25,7 +28,6 @@ export class UserEditComponent implements OnInit {
   {
     this.userService.getUser(this.authService.decodedToken.nameid).subscribe((user:User)=>{
       this.user=user;
-      console.log(user);
     },error=>{
       this.alertify.error(error);
     });
@@ -35,8 +37,9 @@ export class UserEditComponent implements OnInit {
   {
     this.userService.update(this.authService.decodedToken.nameid,this.user).subscribe(next=>{
 
-      console.log(this.authService.decodedToken.nameid);
+      this.router.navigate['/home'];
       this.alertify.success("Profile updated successfully");
+      this.editProfile.reset(this.user);
 
     },error=>{
       this.alertify.error(error);
