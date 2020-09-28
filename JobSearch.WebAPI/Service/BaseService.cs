@@ -19,12 +19,12 @@ namespace JobSearch.WebAPI.Service
             _mapper = mapper;
         }
 
-        public List<TModel> Get(Tsearch search)
+        public virtual List<TModel> Get(Tsearch search)
         {
             return _mapper.Map<List<TModel>>(_context.Set<TDatabase>().ToList());
         }
 
-        public TModel GetById(int id)
+        public virtual TModel GetById(int id)
         {
             return _mapper.Map<TModel>(_context.Set<TDatabase>().Find(id));
         }

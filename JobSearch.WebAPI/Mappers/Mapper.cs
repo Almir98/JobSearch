@@ -32,6 +32,10 @@ namespace JobSearch.WebAPI.Mappers
             CreateMap<Model.Question, Database.Question>().ReverseMap();
 
 
+            CreateMap<AdvertismentUpsertVM, Database.Advertisment>().ReverseMap();
+
+            CreateMap<Model.Advertisment, Database.Advertisment>().ReverseMap();
+
 
 
 

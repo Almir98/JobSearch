@@ -72,13 +72,16 @@ namespace JobSearch.WebAPI
 
             // Repository pattern
             services.AddScoped<IUserRepository,UserService>();
-            
+
+            // Get and GetById services
+
             services.AddScoped<IService<Model.City, object>, BaseService<Model.City, object, Database.City>>();
             services.AddScoped<IService<Model.Gender, object>, BaseService<Model.Gender, object, Database.Gender>>();
             
-            
-            services.AddScoped<ICRUDService<Model.Question,object,QuestionUpsert,QuestionUpsert>,BaseCRUDService<Model.Question,object,Database.Question,QuestionUpsert,QuestionUpsert>>();
+            //CRUD services
 
+            services.AddScoped<ICRUDService<Model.Question,object,QuestionUpsert,QuestionUpsert>,BaseCRUDService<Model.Question,object,Database.Question,QuestionUpsert,QuestionUpsert>>();
+            services.AddScoped<ICRUDService<Model.Advertisment, object, AdvertismentUpsertVM, AdvertismentUpsertVM>, BaseCRUDService<Model.Advertisment, object,Database.Advertisment, AdvertismentUpsertVM, AdvertismentUpsertVM>>();
 
         }
 
@@ -104,7 +107,6 @@ namespace JobSearch.WebAPI
 
                         await context.Response.WriteAsync(error.Error.Message);
                     }
-
                 }));
             }
 
@@ -119,7 +121,6 @@ namespace JobSearch.WebAPI
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "Job Search API");
             });
-
 
             app.UseEndpoints(endpoints =>
             {

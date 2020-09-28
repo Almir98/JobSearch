@@ -9,8 +9,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace JobSearch.WebAPI.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
     public class CityController : BaseController<Model.City, object>
     {
         public CityController(IService<City, object> service) : base(service)

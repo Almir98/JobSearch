@@ -10,9 +10,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace JobSearch.WebAPI.Controllers
 {
-    public class QuestionController : BaseCRUDController<Model.Question, object, QuestionUpsert, QuestionUpsert>
+    public class AdvertismentController : BaseCRUDController<Model.Advertisment, object, AdvertismentUpsertVM, AdvertismentUpsertVM>
     {
-        public QuestionController(ICRUDService<Question, object, QuestionUpsert, QuestionUpsert> service) : base(service)
+        public AdvertismentController(ICRUDService<Advertisment, object, AdvertismentUpsertVM, AdvertismentUpsertVM> service) : base(service)
         {
         }
     }
