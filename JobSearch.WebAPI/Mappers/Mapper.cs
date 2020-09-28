@@ -27,7 +27,10 @@ namespace JobSearch.WebAPI.Mappers
             CreateMap<UserVM, Database.Users>().ReverseMap();
 
             CreateMap<UserUpsertVM, Database.Users>().ReverseMap();
-            //CreateMap<UserUpsertVM, Model.Users>().ReverseMap();
+
+            CreateMap<QuestionUpsert, Database.Question>().ReverseMap();
+            CreateMap<Model.Question, Database.Question>().ReverseMap();
+
 
 
 

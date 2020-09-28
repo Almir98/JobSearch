@@ -23,7 +23,7 @@
     </ul>
 
     <div *ngIf="loggedIn()" class="dropdown">
-      <a class="text-light" >
+      <a id="link" class="text-light" >
         Welcome {{authService.decodedToken.unique_name}}
       </a>
     </div>

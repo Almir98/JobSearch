@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Question } from '../_models/Question';
 import {User} from '../_models/User';
 import { AlertifyService } from '../_services/alertify.service';
 import { AuthService } from '../_services/auth.service';
@@ -14,7 +15,7 @@ import {UserService} from '../_services/user.service';
 })
 export class UserEditComponent implements OnInit {
 
-  user:User;
+  user: User;
   @ViewChild('editProfile') editProfile:NgForm;
 
   constructor(private userService:UserService,private route:ActivatedRoute,private alertify:AlertifyService,
@@ -37,12 +38,12 @@ export class UserEditComponent implements OnInit {
   {
     this.userService.update(this.authService.decodedToken.nameid,this.user).subscribe(next=>{
 
-      this.router.navigate['/home'];
+      this.router.navigate(['/home']);
       this.alertify.success("Profile updated successfully");
       this.editProfile.reset(this.user);
 
     },error=>{
-      this.alertify.error(error);
+      this.alertify.error("Something went wrong");
     })
   }
 

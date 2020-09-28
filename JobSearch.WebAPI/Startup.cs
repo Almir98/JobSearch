@@ -9,6 +9,7 @@ using JobSearch.WebAPI.Database;
 using JobSearch.WebAPI.Helpers;
 using JobSearch.WebAPI.Interface;
 using JobSearch.WebAPI.Service;
+using JobSearch.WebAPI.ViewModels;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics;
@@ -74,7 +75,9 @@ namespace JobSearch.WebAPI
             
             services.AddScoped<IService<Model.City, object>, BaseService<Model.City, object, Database.City>>();
             services.AddScoped<IService<Model.Gender, object>, BaseService<Model.Gender, object, Database.Gender>>();
-
+            
+            
+            services.AddScoped<ICRUDService<Model.Question,object,QuestionUpsert,QuestionUpsert>,BaseCRUDService<Model.Question,object,Database.Question,QuestionUpsert,QuestionUpsert>>();
 
 
         }

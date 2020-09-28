@@ -10,3 +10,7 @@ li a{
 #log{
     cursor: pointer;
 }
+
+#link{
+    text-decoration: none;
+}

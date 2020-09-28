@@ -25,6 +25,7 @@ namespace JobSearch.WebAPI.Database
         public virtual DbSet<Gender> Gender { get; set; }
         public virtual DbSet<JobLevel> JobLevel { get; set; }
         public virtual DbSet<JobType> JobType { get; set; }
+        public virtual DbSet<Question> Question { get; set; }
         public virtual DbSet<Skill> Skill { get; set; }
         public virtual DbSet<UserType> UserType { get; set; }
         public virtual DbSet<Users> Users { get; set; }
@@ -239,6 +240,16 @@ namespace JobSearch.WebAPI.Database
                 entity.Property(e => e.JobTypeId).HasColumnName("JobTypeID");
 
                 entity.Property(e => e.JobTypeName).HasMaxLength(50);
+            });
+
+            modelBuilder.Entity<Question>(entity =>
+            {
+                entity.Property(e => e.UserId).HasColumnName("UserID");
+
+                entity.HasOne(d => d.User)
+                    .WithMany(p => p.Question)
+                    .HasForeignKey(d => d.UserId)
+                    .HasConstraintName("FK_Question_UserID");
             });
 
             modelBuilder.Entity<Skill>(entity =>

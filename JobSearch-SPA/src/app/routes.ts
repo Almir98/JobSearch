@@ -10,7 +10,6 @@ import { AboutComponent } from './about/about.component';
 import { UserEditComponent } from './user-edit/user-edit.component';
 
 
-
 export const appRoutes: Routes = [
 
     {path:'home',component:HomeComponent},

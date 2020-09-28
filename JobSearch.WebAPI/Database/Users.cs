@@ -8,6 +8,7 @@ namespace JobSearch.WebAPI.Database
         public Users()
         {
             Application = new HashSet<Application>();
+            Question = new HashSet<Question>();
         }
 
         public int UserId { get; set; }
@@ -27,5 +28,6 @@ namespace JobSearch.WebAPI.Database
         public virtual Gender Gender { get; set; }
         public virtual UserType UserType { get; set; }
         public virtual ICollection<Application> Application { get; set; }
+        public virtual ICollection<Question> Question { get; set; }
     }
 }
