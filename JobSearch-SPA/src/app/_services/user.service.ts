@@ -2,7 +2,6 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import {User } from '../_models/User';
-import {UserUpsertModel } from '../_shared/UserUpsertModel';
 import { AuthService } from './auth.service';
 
 
@@ -25,7 +24,7 @@ getUser(id:number)
   return this.http.get<User>(this.baseUrl+"/id?id="+this.authService.decodedToken.nameid);
 }
 
-insert(client:UserUpsertModel)
+insert(client:User)
 {
   return this.http.post(this.baseUrl,client);
 }

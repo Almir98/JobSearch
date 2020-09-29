@@ -81,7 +81,7 @@ namespace JobSearch.WebAPI
             //CRUD services
 
             services.AddScoped<ICRUDService<Model.Question,object,QuestionUpsert,QuestionUpsert>,BaseCRUDService<Model.Question,object,Database.Question,QuestionUpsert,QuestionUpsert>>();
-            services.AddScoped<ICRUDService<Model.Advertisment, object, AdvertismentUpsertVM, AdvertismentUpsertVM>, BaseCRUDService<Model.Advertisment, object,Database.Advertisment, AdvertismentUpsertVM, AdvertismentUpsertVM>>();
+            services.AddScoped<ICRUDService<Model.Advertisment, object, AdvertismentUpsertVM, AdvertismentUpsertVM>, AdvertismentService>();
 
         }
 

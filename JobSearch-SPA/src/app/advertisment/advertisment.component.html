@@ -1,6 +1,6 @@
 <div class="container mt-5">
   
-  <div class="col-xs-12 col-md-10 mb-5">
+  <div id="search" class="col-xs-12 col-md-7 mb-5">
     <div id="custom-search-input">
         <div class="input-group col-md-12">
             <input type="text" class="form-control input-lg" id="searchText" placeholder="Search">
@@ -13,9 +13,8 @@
     </div>
 </div>
 
-<div class="card flex-row flex-wrap" style="border: none">       
+<!-- <div class="card flex-row flex-wrap" style="border: none">       
   <div class="row col-sm-12 col-md-3">
-    <!-- <img src="/rest/profile/photo/wetrxamvcwus" data-src="/rest/profile/photo/wetrxamvcwus" class="lazyload img-fluid center" alt="img"> -->
   </div>
   <div class="row col-sm-12 col-md-8 marginLO">
     <div class="card-block px-2">
@@ -34,4 +33,39 @@
         <div class="btn btn-warning marginTop4" style="font-weight:600">Senior</div>
       </div>
   </div> 
-</div>
+</div> -->
+
+
+
+<div *ngFor="let item of advertisments" class="card flex-row flex-wrap"  style="border: none">
+  
+  <div class="row col-sm-12 col-md-3">
+    <!-- <img src="/rest/profile/photo/wetrxamvcwus" data-src="/rest/profile/photo/wetrxamvcwus" class="lazyload img-fluid center" alt="img"> -->
+  </div>
+  <div class="row col-sm-12 col-md-8 marginLO">
+    <div class="card-block px-2">
+      <a class="title" href="#">
+        <h4 class="card-title marginTop3 text-center">{{item.categoryName}}</h4>
+      </a>
+          <strong>Level of knowledge : </strong> <button id="button" class="btn btn-warning mr-2 mb-2" aria-readonly="true" style="font-weight:600">{{item.jobLevel.levelName}}</button>
+          <p><strong>Working time : </strong>{{item.jobType.jobTypeName}}</p>
+          <p><strong>Location : </strong>{{item.city.cityName}}</p>
+          <p><strong>Published date : </strong>{{item.published | date}}</p>
+          <p><strong>To date : </strong>{{item.toDate | date}}</p>
+          <br>
+          <!-- <p class="card-text" id="jobcode">Senior Software Engineer in Test 5+ years of experience ... <a href="/jobView/58awed62qwz91kpo9li3m018j" class="aNoDecor">(read more)</a></p> -->
+          
+          <div class="btn btn-primary mr-2 mb-2">REST</div>
+          <div class="btn btn-primary mr-2 mb-2">JavaScript</div>
+          <div class="btn btn-primary mr-2 mb-2">Kubernetes</div>
+          <div class="btn btn-primary mr-2 mb-2">HTTP</div>
+          <div class="btn btn-primary mr-2 mb-2">Test Automation</div>
+          <div class="btn btn-primary mr-2 mb-2">BDD</div>
+          <div class="btn btn-primary mr-2 mb-2">Kubernetes</div>
+          <hr>
+        </div>
+      </div> 
+    </div>
+    
+    
+
