@@ -83,10 +83,9 @@ namespace JobSearch.WebAPI
             services.AddScoped<ICRUDService<Model.Question,object,QuestionUpsert,QuestionUpsert>,BaseCRUDService<Model.Question,object,Database.Question,QuestionUpsert,QuestionUpsert>>();
             services.AddScoped<ICRUDService<Model.Advertisment, object, AdvertismentUpsertVM, AdvertismentUpsertVM>, AdvertismentService>();
             services.AddScoped<ICRUDService<Model.Application, object, ApplicationUpsertVM, ApplicationUpsertVM>, ApplicationService>();
+            services.AddScoped<ICRUDService<Model.City, object, CityUpsertVM, CityUpsertVM>, CityService>();
         
 
-        
-        
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

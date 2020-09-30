@@ -40,51 +40,26 @@
         <input type="text" required class="form-control" readonly placeholder="{{advertisment?.jobType.jobTypeName}}">
       </div>
     </div>
-
-
     <label>Upload resume</label><span class="required"> *</span>
     <div class="form-group">
       <div class="custom-file">
-        <input type="file" class="custom-file-input" name="cv" [(ngModel)]="application.cv" aria-describedby="inputGroupFileAddon04">
-        <label class="custom-file-label">Choose file</label>
+        <input type="file" class="custom-file-input" name="cv" [(ngModel)]="application.cv">
+        <label class="custom-file-label">{{application?.cv}}</label>
       </div>
     </div>
-
-    <label>Upload motivation letter</label><span class="required"> *</span>
+    <label>Motivation letter</label><span class="required"> *</span>
     <div class="form-group">
       <div class="custom-file">
-        <input type="file" class="custom-file-input" name="cv" [(ngModel)]="application.motivation" aria-describedby="inputGroupFileAddon04">
-        <label class="custom-file-label" >Choose file</label>
+        <input type="file" class="custom-file-input" name="motivation" [(ngModel)]="application.motivation">
+        <label class="custom-file-label">{{application?.motivation}}</label>
       </div>
     </div>
-
     <div class="form-group">
       <label>Note</label>
      <textarea rows="3" type="textarea" required class="form-control" name="message" [(ngModel)]="application.description"></textarea>
     </div>
 
-    <button [disabled]="!submitForm.valid" id="submit" type="submit" class="btn btn-primary">Send</button><p></p>
+    <button [disabled]="!submitForm.valid" id="submit" type="submit" class="btn btn-primary">Send</button>
+
   </form>
-
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

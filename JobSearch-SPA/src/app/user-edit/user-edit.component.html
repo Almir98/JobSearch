@@ -31,6 +31,6 @@
        <label>Adress</label>
        <input type="text" class="form-control" name="adress" required placeholder="{{user.adress}}" [(ngModel)]="user.adress">
      </div>
-    <button [disabled]="!editProfile.valid" id="submit" type="submit" class="btn btn-primary">Save</button>
+    <button [disabled]="!editProfile.dirty" id="submit" type="submit" class="btn btn-primary">Save</button>
   </form>
 </div>

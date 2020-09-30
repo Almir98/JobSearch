@@ -11,11 +11,11 @@ export class GenderService {
 
   constructor(private http:HttpClient) { }
 
-  baseUrl=environment.apiUrl+'Gender/';
+  baseUrl=environment.apiUrl+'/Gender';
 
   getAll(): Observable<Gender[]>
   {
-    return this.http.get<Gender[]>(this.baseUrl+'Get');
+    return this.http.get<Gender[]>(this.baseUrl);
   }
 
 }

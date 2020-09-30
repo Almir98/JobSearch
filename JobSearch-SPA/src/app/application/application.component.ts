@@ -42,7 +42,6 @@ export class ApplicationComponent implements OnInit {
   loadAdvertisment()
   {
     return this.advertismentService.getById(+this.route.snapshot.params['id']).subscribe((data: Advertisment)=>{
-
       this.advertisment=data;
     },error=>{
       this.alertify.error("Something went wrong");
@@ -51,6 +50,7 @@ export class ApplicationComponent implements OnInit {
 
   sendApplication()
   {
+    console.log("aa");
 
   }
 

@@ -1,46 +1,50 @@
 <div class="container">
   <h2 id="title">Register new account</h2>
-  
-  <form #newUser="ngForm" (ngSubmit)="registerAccount()">
+  <div class="col-sm-13">
+    <div *ngIf="register.dirty" class="alert alert-info">
+      <p><strong>Information:</strong> You have made changes. Any unsaved changes will be lost!</p>
+    </div>
+  </div>
+  <form #register="ngForm" (ngSubmit)="registerAccount()">
     <div class="form-row">
       <div class="form-group col-md-6">
-        <label for="inputEmail4">First name<span class="required"> *</span></label>
-        <input type="email" required class="form-control" id="inputEmail4">
+        <label>First name<span class="required"> *</span></label>
+        <input type="text" required class="form-control" name="firstName" [(ngModel)]=" user.firstName">
       </div>
       <div class="form-group col-md-6">
-        <label for="inputPassword4">Last name</label><span class="required"> *</span>
-        <input type="text" required class="form-control" id="inputPassword4">
+        <label>Last name</label><span class="required"> *</span>
+        <input type="text" required class="form-control" name="lastName" [(ngModel)]="user.lastName">
       </div>
     </div>
      <div class="form-group">
-     <label for="inputAddress">Phone<span class="required"> *</span></label>
-     <input type="number" class="form-control" required placeholder="+387 6x xxxx xxx">
+     <label>Phone<span class="required"> *</span></label>
+     <input type="number" class="form-control" required placeholder="+387 6x xxxx xxx" name="phone" [(ngModel)]="user.phone">
      </div>
      <div class="form-group">
-       <label for="inputAddress2">Email<span class="required"> *</span></label>
-       <input type="email" class="form-control" required id="inputAddress2" placeholder="test@hotmail.com">
+       <label>Email<span class="required"> *</span></label>
+       <input type="email" class="form-control" required placeholder="test@hotmail.com" name="email" [(ngModel)]="user.email">
      </div>
      <div class="form-group">
-       <label for="inputAddress2">Adress<span class="required"> *</span></label>
-       <input type="text" class="form-control" required id="inputAddress2" placeholder="">
+       <label>Adress<span class="required"> *</span></label>
+       <input type="text" class="form-control" required name="adress" [(ngModel)]="user.adress">
      </div>
     <div class="form-row">
       <div class="form-group col-md-6">
-        <label for="inputEmail4">Password<span class="required"> *</span></label>
-        <input type="email" class="form-control" id="inputEmail4">
+        <label>Password<span class="required"> *</span></label>
+        <input type="password" class="form-control" name="passwordHash" name="passwordHash" [(ngModel)]="user.passwordHash">
       </div>
       <div class="form-group col-md-6">
-        <label for="inputPassword4">Password confirm<span class="required"> *</span></label>
-        <input type="password" class="form-control" id="inputPassword4">
+        <label>Password confirm<span class="required"> *</span></label>
+        <input type="password" class="form-control" name="passwordSalt" [(ngModel)]="user.passwordSalt">
       </div>
     </div>
     <div class="form-row">
       <div class="form-group col-md-6">
-        <label for="inputCity">Birth date<span class="required"> *</span></label>
-        <input type="date" class="form-control" id="inputCity">
+        <label>Birth date<span class="required"> *</span></label>
+        <input type="date" class="form-control" name="yearOfBirth" [(ngModel)]="user.yearOfBirth">
       </div>
       <div class="form-group col-md-6">
-        <label for="inputState">Gender<span class="required"> *</span></label>
+        <label>Gender<span class="required"> *</span></label>
         <select class="form-control">
           <option [ngValue]="undefined" selected disabled>Select gender</option>
           <!-- <option *ngFor="let item of genders" [value]="item.genderId">{{ item.genderType }} -->
@@ -55,6 +59,6 @@
         </select>
       </div>
     </div>
-    <button id="submit" [disabled]="!newUser.valid" type="submit" class="btn btn-primary mt-3">Register account</button>
-  </form>
+    <button id="submit" [disabled]="!register.dirty" type="submit" class="btn btn-primary mt-3">Register account</button>
+  </form>                     <!--  vratit na valid -->
 </div>
