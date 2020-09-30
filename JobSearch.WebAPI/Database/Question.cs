@@ -9,7 +9,7 @@ namespace JobSearch.WebAPI.Database
         public string Subject { get; set; }
         public string Message { get; set; }
         public int? UserId { get; set; }
-        public Users User { get; set; }
 
+        public virtual Users User { get; set; }
     }
 }

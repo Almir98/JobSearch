@@ -1,70 +1,65 @@
-    <div class="card flex-row flex-wrap" style="border: none">
-        <div class="row col-sm-12 col-md-3">
-            <!-- <img src="/rest/profile/photo/99xiuiihvkkzsU" class="img-fluid mx-auto d-block" alt=""> -->
-            </div><div class="row col-sm-12 col-md-8">
-                <div class="card-block px-2 col-sm-12">
-                    <h3 class="card-title text-center" style="margin-top:3px">{{advertisment?.company.companyName}}</h3>
-                        <p class="card-text text-center"><a href="https://www.klika.com" target="_blank" class="aNoDecor">https://www.klika.com</a></p>
-                    </div>
-                </div>
-            </div>
-            <br>
-            <hr>
-            <div class="row"><div class="col-md-2 col-xs-6">Location</div>
-            <div class="col-md-2 col-xs-6"><b>{{advertisment?.city.cityName}}</b>
-            </div>
-            <div class="col-md-2 col-xs-6">Published</div>
-            <div class="col-md-2 col-xs-6"><b>{{advertisment?.published | date}}</b></div>
-        </div><div class="row">
-            <div class="col-md-2 col-xs-6">Level of knowledge</div>
-            <div class="col-md-2 col-xs-6"><b>{{advertisment?.jobLevel.levelName}}</b></div>
-            <div class="col-md-2 col-xs-6">To date</div>
-            <div class="col-md-2 col-xs-6"><b>{{advertisment?.toDate | date}}</b></div>
-            <div class="col-md-2 col-xs-6"></div>
-            <div class="col-md-2 col-xs-6"></div>
-            <div class="col-md-2 col-xs-6">Post status</div>
-            <button id="button" class="btn btn-warning mr-2 mb-2" aria-readonly="true" style="width:85px">{{advertisment?.isActive}}</button>
-        </div>
-        <hr>
-        <div class="card" style="border:none">
-            <div class="card-body">
-                  <h2 class="card-title text-center">{{advertisment?.categoryName}}</h2>
-                  <br>
-                  <div class="card-text">
-                      <p><font face="sans-serif"><h4><strong>Company Description</strong></h4></font></p>
-                        <div class="sans-serif">
-                            <p>
-                                {{advertisment?.company.aboutUs}}
-                            </p>
-                        </div>
-
-                        <!-- Job description -->
-
-                             <p><font face="sans-serif"><h5><strong>What will you do?</strong></h5></font></p>
-                                   <p></p>
-                                   <p>{{advertisment?.jobDescription}}</p>
-                                   <p></p>
-                                   
-                                   <hr>
-                                     <p><span style="font-family: sans-serif; font-size: 1rem;"><h4><strong>Qualifications</strong></h4></span></p>
-                                     <p><span style="font-family: sans-serif; font-size: 1rem;"><h5><strong>More about you:</strong></h5></span></p>
-                                     <p></p>
-                                     <p>{{advertisment?.education}}</p>
-                                     <p></p>
-                                     <p><span style="font-family: sans-serif; font-size: 1rem;"><h5><strong>Requirements:</strong></h5></span></p>
-                                    <p></p>
-                                    <p>{{advertisment?.requirements}}</p>
-                                    <p></p>
-
-                                    <hr>
-                                    <p><font face="sans-serif"><h4><strong>Additional Information</strong> </h4></font></p>
-                                    <p><font face="sans-serif"><b>Why our employees choose us (and stay)?</b></font></p>
-                                    <p></p>
-                                    <p>{{advertisment?.offers}}</p>
-                                    <p></p>
-                                    <hr>
-                                    <br>
-            </div>
-                <button type="submit" id="application" class="btn btn-primary btn15 marginTopX col-sm-6" [routerLink]="['/application']" routerLinkActive="router-link-active"   >Apply for this position</button>
-            </div>
-        </div>
+<div class="card flex-row flex-wrap" style="border: none">
+    <div class="row col-sm-12 col-md-3">
+       <!-- <img src="/rest/profile/photo/99xiuiihvkkzsU" class="img-fluid mx-auto d-block" alt=""> -->
+    </div>
+    <div class="row col-sm-12 col-md-8">
+       <div class="card-block px-2 col-sm-12">
+          <h3 class="card-title text-center" style="margin-top:3px">{{advertisment?.company.companyName}}</h3>
+          <p class="card-text text-center"><a href="https://www.klika.com" target="_blank" class="aNoDecor">https://www.klika.com</a></p>
+       </div>
+    </div>
+ </div>
+ <br><hr>
+ <div class="row">
+    <div class="col-md-2 col-xs-6">Location</div>
+    <div class="col-md-2 col-xs-6"><b>{{advertisment?.city.cityName}}</b>
+    </div>
+    <div class="col-md-2 col-xs-6">Published</div>
+    <div class="col-md-2 col-xs-6"><b>{{advertisment?.published | date}}</b></div>
+ </div>
+ <div class="row">
+    <div class="col-md-2 col-xs-6">Level of knowledge</div>
+    <div class="col-md-2 col-xs-6"><b>{{advertisment?.jobLevel.levelName}}</b></div>
+    <div class="col-md-2 col-xs-6">To date</div>
+    <div class="col-md-2 col-xs-6"><b>{{advertisment?.toDate | date}}</b></div>
+    <div class="col-md-2 col-xs-6"></div>
+    <div class="col-md-2 col-xs-6"></div>
+    <div class="col-md-2 col-xs-6">Post status</div>
+    <button id="button" class="btn btn-warning mr-2 mb-2" aria-readonly="true" style="width:85px">{{advertisment?.isActive}}</button>
+ </div>
+ <hr>
+ <div class="card" style="border:none">
+    <div class="card-body">
+       <h2 class="card-title text-center">{{advertisment?.categoryName}}</h2>
+       <br>
+       <div class="card-text">
+          <p><font face="sans-serif"><h4><strong>Company Description</strong></h4></font></p>
+          <div class="sans-serif">
+             <p>
+                {{advertisment?.company.aboutUs}}
+             </p>
+          </div>
+          <p><font face="sans-serif"><h5><strong>What will you do?</strong></h5></font></p>
+          <p></p>
+          <p>{{advertisment?.jobDescription}}</p>
+          <p></p>
+          <hr>
+          <p><span style="font-family: sans-serif; font-size: 1rem;"><h4><strong>Qualifications</strong></h4></span></p>
+          <p><span style="font-family: sans-serif; font-size: 1rem;"><h5><strong>More about you:</strong></h5></span></p><p></p>
+          <p>{{advertisment?.education}}</p><p></p>
+          <p><span style="font-family: sans-serif; font-size: 1rem;"><h5><strong>Requirements:</strong></h5></span></p><p></p>
+          <p>{{advertisment?.requirements}}</p><p></p>
+          <hr>
+          <p><font face="sans-serif"><h4><strong>Additional Information</strong> </h4></font></p>
+          <p><font face="sans-serif"><b>Why our employees choose us (and stay)?</b></font></p><p></p>
+          <p>{{advertisment?.offers}}</p>
+          <p></p><hr>
+          <div *ngIf="!loggedIn()" class="col-sm-10" class="alert alert-info">
+             <p id="note"><strong>Note: </strong> If you want to apply for the advertisment, log in to your profile please.</p>
+             <br>
+          </div>
+       </div>
+    </div>
+    <button *ngIf="!loggedIn()" type="button" id="application" disabled class="btn btn-primary btn15 marginTopX col-sm-6">Apply for this position</button>
+    <button *ngIf="loggedIn()" type="submit" id="application" class="btn btn-primary btn15 marginTopX col-sm-6" [routerLink]="['/application']" routerLinkActive="router-link-active">Apply for this position</button><br>
+ </div>

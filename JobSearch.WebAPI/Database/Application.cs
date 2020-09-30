@@ -7,10 +7,6 @@ namespace JobSearch.WebAPI.Database
     {
         public int ApplicationId { get; set; }
         public DateTime ApplicationDate { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string Email { get; set; }
-        public string PhoneNumber { get; set; }
         public string Description { get; set; }
         public string Cv { get; set; }
         public string Motivation { get; set; }

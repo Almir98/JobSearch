@@ -1,19 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace JobSearch.Model
+namespace JobSearch.WebAPI.ViewModels
 {
-    public partial class Application
+    public class ApplicationUpsertVM
     {
-        public int ApplicationId { get; set; }
         public DateTime ApplicationDate { get; set; }
         public string Description { get; set; }
         public string Cv { get; set; }
         public string Motivation { get; set; }
         public int? AdvertismentId { get; set; }
         public int? UserId { get; set; }
-
-        public virtual Advertisment Advertisment { get; set; }
-        public virtual Users User { get; set; }
     }
 }

@@ -132,13 +132,9 @@ CREATE TABLE Application
 (
 ApplicationID INT NOT NULL CONSTRAINT PK_ApplicationID PRIMARY KEY IDENTITY(1,1),
 ApplicationDate DATE NOT NULL,
-FirstName NVARCHAR,
-LastName NVARCHAR,
-Email NVARCHAR,
-PhoneNumber NVARCHAR,
-Description NVARCHAR,
-CV NVARCHAR,
-Motivation NVARCHAR,
+Description NVARCHAR(MAX),
+CV NVARCHAR(MAX),
+Motivation NVARCHAR(MAX),
 
 AdvertismentID INT NULL CONSTRAINT FK_Applications_AdvertismentID FOREIGN KEY REFERENCES Advertisment(AdvertismentID),
 UserID INT NULL CONSTRAINT FK_Applications_UserID FOREIGN KEY REFERENCES Users(UserID),

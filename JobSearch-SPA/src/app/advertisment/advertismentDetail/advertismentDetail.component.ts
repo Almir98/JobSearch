@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Advertisment } from 'src/app/_models/Advertisment';
 import { AdvertismentService } from 'src/app/_services/advertisment.service';
 import { AlertifyService } from 'src/app/_services/alertify.service';
+import { AuthService } from 'src/app/_services/auth.service';
 
 @Component({
   selector: 'app-advertismentDetail',
@@ -13,7 +14,7 @@ export class AdvertismentDetailComponent implements OnInit {
 
   advertisment: Advertisment;
 
-  constructor(private advertismentService: AdvertismentService, private alertify: AlertifyService, private route: ActivatedRoute )
+  constructor(private advertismentService: AdvertismentService, private alertify: AlertifyService, private route: ActivatedRoute, private authService:AuthService )
   {
   }
 
@@ -28,6 +29,11 @@ export class AdvertismentDetailComponent implements OnInit {
      },error =>{
        this.alertify.error("Something went wrong");
      });
+  }
+
+  loggedIn()
+  {
+    return this.authService.loggedIn();
   }
 
 

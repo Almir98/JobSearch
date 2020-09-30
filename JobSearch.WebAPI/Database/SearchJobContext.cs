@@ -44,14 +44,6 @@ namespace JobSearch.WebAPI.Database
             {
                 entity.Property(e => e.AdvertismentId).HasColumnName("AdvertismentID");
 
-                entity.Property(e => e.BonusSkills)
-                    .IsRequired()
-                    .HasMaxLength(1);
-
-                entity.Property(e => e.CandidateDescription)
-                    .IsRequired()
-                    .HasMaxLength(1);
-
                 entity.Property(e => e.CategoryId).HasColumnName("CategoryID");
 
                 entity.Property(e => e.CategoryName)
@@ -62,27 +54,11 @@ namespace JobSearch.WebAPI.Database
 
                 entity.Property(e => e.CompanyId).HasColumnName("CompanyID");
 
-                entity.Property(e => e.Education)
-                    .IsRequired()
-                    .HasMaxLength(1);
-
-                entity.Property(e => e.JobDescription)
-                    .IsRequired()
-                    .HasMaxLength(1);
-
                 entity.Property(e => e.JobLevelId).HasColumnName("JobLevelID");
 
                 entity.Property(e => e.JobTypeId).HasColumnName("JobTypeID");
 
-                entity.Property(e => e.Offers)
-                    .IsRequired()
-                    .HasMaxLength(1);
-
                 entity.Property(e => e.Published).HasColumnType("date");
-
-                entity.Property(e => e.Requirements)
-                    .IsRequired()
-                    .HasMaxLength(1);
 
                 entity.Property(e => e.ToDate).HasColumnType("date");
 
@@ -145,15 +121,7 @@ namespace JobSearch.WebAPI.Database
 
                 entity.Property(e => e.Description).HasMaxLength(1);
 
-                entity.Property(e => e.Email).HasMaxLength(1);
-
-                entity.Property(e => e.FirstName).HasMaxLength(1);
-
-                entity.Property(e => e.LastName).HasMaxLength(1);
-
                 entity.Property(e => e.Motivation).HasMaxLength(1);
-
-                entity.Property(e => e.PhoneNumber).HasMaxLength(1);
 
                 entity.Property(e => e.UserId).HasColumnName("UserID");
 
@@ -194,8 +162,6 @@ namespace JobSearch.WebAPI.Database
             modelBuilder.Entity<Company>(entity =>
             {
                 entity.Property(e => e.CompanyId).HasColumnName("CompanyID");
-
-                entity.Property(e => e.AboutUs).HasMaxLength(1);
 
                 entity.Property(e => e.Adress)
                     .IsRequired()
