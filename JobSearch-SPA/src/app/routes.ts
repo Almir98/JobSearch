@@ -21,7 +21,7 @@ export const appRoutes: Routes = [
     {path:'question',component:QuestionComponent},
     {path:'contact',component:ContactComponent},
     {path:'about',component:AboutComponent},
-    {path:'application',component:ApplicationComponent},
+    {path:'application/:id',component:ApplicationComponent},
 
     {path:'EditProfile',component:UserEditComponent,canActivate:[AuthGuard]},
 

@@ -1,3 +1,90 @@
-<p>
-  application works!
-</p>
+<div class="container">
+  <h2 id="title">Send application</h2>
+  
+  <div class="col-sm-13">
+    <div *ngIf="submitForm.dirty" class="alert alert-info">
+      <p><strong>Information:</strong> You have made changes. Any unsaved changes will be lost!</p>
+    </div>
+  </div>
+
+  <form #submitForm="ngForm" (ngSubmit)="sendApplication()">
+    
+    <div class="form-group">
+      <label>First name</label>
+      <input type="email" class="form-control" readonly placeholder="{{user?.firstName}}">
+    </div>
+    <div class="form-group">
+      <label>Last name</label>
+      <input type="email" class="form-control" readonly placeholder="{{user?.lastName}}">
+    </div>
+    <div class="form-group">
+      <label>Email</label>
+      <input type="email" class="form-control" readonly placeholder="{{user?.email}}">
+    </div>
+    <div class="form-group">
+      <label>Position</label>
+      <input type="number" class="form-control" readonly placeholder="{{advertisment?.categoryName}}">
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-4">
+        <label for="inputEmail4">Location</label>
+        <input type="email" required class="form-control" readonly placeholder="{{advertisment?.city.cityName}}">
+      </div>
+      <div class="form-group col-md-4">
+        <label for="inputPassword4">Level of knowledge</label>
+        <input type="text" required class="form-control" readonly placeholder="{{advertisment?.jobLevel.levelName}}">
+      </div>
+      <div class="form-group col-md-4">
+        <label for="inputPassword4">Working time</label>
+        <input type="text" required class="form-control" readonly placeholder="{{advertisment?.jobType.jobTypeName}}">
+      </div>
+    </div>
+
+
+    <label>Upload resume</label><span class="required"> *</span>
+    <div class="form-group">
+      <div class="custom-file">
+        <input type="file" class="custom-file-input" name="cv" [(ngModel)]="application.cv" aria-describedby="inputGroupFileAddon04">
+        <label class="custom-file-label">Choose file</label>
+      </div>
+    </div>
+
+    <label>Upload motivation letter</label><span class="required"> *</span>
+    <div class="form-group">
+      <div class="custom-file">
+        <input type="file" class="custom-file-input" name="cv" [(ngModel)]="application.motivation" aria-describedby="inputGroupFileAddon04">
+        <label class="custom-file-label" >Choose file</label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Note</label>
+     <textarea rows="3" type="textarea" required class="form-control" name="message" [(ngModel)]="application.description"></textarea>
+    </div>
+
+    <button [disabled]="!submitForm.valid" id="submit" type="submit" class="btn btn-primary">Send</button><p></p>
+  </form>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -61,5 +61,5 @@
        </div>
     </div>
     <button *ngIf="!loggedIn()" type="button" id="application" disabled class="btn btn-primary btn15 marginTopX col-sm-6">Apply for this position</button>
-    <button *ngIf="loggedIn()" type="submit" id="application" class="btn btn-primary btn15 marginTopX col-sm-6" [routerLink]="['/application']" routerLinkActive="router-link-active">Apply for this position</button><br>
+    <button *ngIf="loggedIn()" type="submit" id="application" class="btn btn-primary btn15 marginTopX col-sm-6" [routerLink]="['/application',advertisment?.advertismentId]" routerLinkActive="router-link-active">Apply for this position</button><br>
  </div>
