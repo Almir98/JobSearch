@@ -8,11 +8,13 @@ import {ContactComponent} from './contact/contact.component';
 import { AuthGuard } from './_guards/auth.guard';
 import { AboutComponent } from './about/about.component';
 import { UserEditComponent } from './user-edit/user-edit.component';
+import { AdvertismentDetailComponent } from './advertisment/advertismentDetail/advertismentDetail.component';
 
 
 export const appRoutes: Routes = [
 
     {path:'home',component:HomeComponent},
+    {path:'advertisment/:id',component:AdvertismentDetailComponent},
     {path:'register',component:RegisterComponent},
     //{path:'register',component:RegisterComponent,canActivate:[AuthGuard]},
     {path:'question',component:QuestionComponent},

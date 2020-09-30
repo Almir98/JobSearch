@@ -26,7 +26,6 @@ export class AdvertismentComponent implements OnInit {
     this.adverstimentService.getAll().subscribe(data=>{
 
       this.advertisments=data;
-      console.log(this.advertisments);
     },error=>{
       this.alertify.error("Something went wrong");
     })

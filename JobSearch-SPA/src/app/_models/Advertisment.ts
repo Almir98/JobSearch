@@ -6,7 +6,7 @@ import {JobType} from './JobType';
 
 export interface Advertisment 
 {
-    advertismentid: number;
+    advertismentId: number;
     categoryName: string;
     published: Date;
     toDate: Date;

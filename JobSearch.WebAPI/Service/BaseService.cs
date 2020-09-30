@@ -26,6 +26,7 @@ namespace JobSearch.WebAPI.Service
 
         public virtual TModel GetById(int id)
         {
+            var entity = _context.Set<TDatabase>().Find(id);
             return _mapper.Map<TModel>(_context.Set<TDatabase>().Find(id));
         }
         

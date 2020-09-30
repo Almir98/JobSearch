@@ -21,9 +21,10 @@ export class AdvertismentService {
    return this.http.get<Advertisment[]>(this.baseUrl);
  }
 
- getById(id : number)
+ getById(id): Observable<Advertisment> 
  {
-   return this.http.get(this.baseUrl+'/id?id='+ this.authService.decodedToken.nameid);
+    console.log(id);
+   return this.http.get<Advertisment>(this.baseUrl+'/id?id='+ id);
  }
 
  insert(request: Advertisment)

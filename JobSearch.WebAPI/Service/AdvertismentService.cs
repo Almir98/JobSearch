@@ -28,5 +28,21 @@ namespace JobSearch.WebAPI.Service
 
             return _mapper.Map<List<Model.Advertisment>>(query.ToList());
         }
+
+
+        public override Model.Advertisment GetById(int id)
+        {
+            var result = _context.Advertisment
+                .Include(e => e.Category)
+                .Include(e => e.City)
+                .Include(e => e.Company)
+                .Include(e => e.JobLevel)
+                .Include(e => e.JobType)
+                .Include(e => e.AdvertismentSkill)
+                .FirstOrDefault(e=>e.AdvertismentId==id);
+
+            return _mapper.Map<Model.Advertisment>(result);
+
+        }
     }
 }
