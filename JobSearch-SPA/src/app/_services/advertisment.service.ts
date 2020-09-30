@@ -23,7 +23,6 @@ export class AdvertismentService {
 
  getById(id): Observable<Advertisment> 
  {
-    console.log(id);
    return this.http.get<Advertisment>(this.baseUrl+'/id?id='+ id);
  }
 

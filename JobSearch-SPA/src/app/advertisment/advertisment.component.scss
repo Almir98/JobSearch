@@ -15,3 +15,16 @@ p{
 #search{
     margin: auto;
 }
+
+#link{
+    cursor: pointer;
+}
+
+h4{
+    border-style: none;
+    outline: none;
+}
+
+h4:hover{
+    color: blue;
+}

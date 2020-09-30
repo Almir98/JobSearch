@@ -13,13 +13,17 @@
             <div class="row"><div class="col-md-2 col-xs-6">Location</div>
             <div class="col-md-2 col-xs-6"><b>{{advertisment?.city.cityName}}</b>
             </div>
-            <div class="col-md-2 col-xs-6">Level of knowledge</div>
-            <div class="col-md-2 col-xs-6"><b>{{advertisment?.jobLevel.levelName}}</b></div>
-        </div><div class="row">
             <div class="col-md-2 col-xs-6">Published</div>
             <div class="col-md-2 col-xs-6"><b>{{advertisment?.published | date}}</b></div>
+        </div><div class="row">
+            <div class="col-md-2 col-xs-6">Level of knowledge</div>
+            <div class="col-md-2 col-xs-6"><b>{{advertisment?.jobLevel.levelName}}</b></div>
             <div class="col-md-2 col-xs-6">To date</div>
             <div class="col-md-2 col-xs-6"><b>{{advertisment?.toDate | date}}</b></div>
+            <div class="col-md-2 col-xs-6"></div>
+            <div class="col-md-2 col-xs-6"></div>
+            <div class="col-md-2 col-xs-6">Post status</div>
+            <button id="button" class="btn btn-warning mr-2 mb-2" aria-readonly="true" style="width:85px">{{advertisment?.isActive}}</button>
         </div>
         <hr>
         <div class="card" style="border:none">
@@ -27,79 +31,40 @@
                   <h2 class="card-title text-center">{{advertisment?.categoryName}}</h2>
                   <br>
                   <div class="card-text">
-                      <p><font face="sans-serif"><b>Company Description</b></font></p>
-                      <p><font face="sans-serif">At Infobip we dream big. We value creativity, persistence and innovation, passionately believing that it
-                           
-                             solutions.</font></p>
-                             <p><span style="font-family: sans-serif; font-size: 1rem;"><b>Job Description</b></span></p>
-                             <p><font face="sans-serif"><b>Why is this role important at Infobip?</b></font></p>
-                             <p><span style="font-family: sans-serif; font-size: 1rem;">Be
-                                erhouse means working on an in-house developed product and delivering solutions on a global level. 
-                                 As a Front End Software Engineer in Sarajevo you will be dedicated to your microservices and deal with challenges of large
-                                  architecture that is scalable, balanced, sends over 400 million messages daily and helps our clients to grow their 
-                                  . It’s an opportunity to work on our Real-Time Communication requirement area, where we enable instant interactions acros
-                                  s our platform, whether that’s audio communication using our Voice platform, or video communication across our 
-                                   platform.</span></p>
-                                   
-                                   <p><font face="sans-serif"><br></font></p>
-                                   <p><font face="sans-serif"><b>What will you do?</b></font></p>
+                      <p><font face="sans-serif"><h4><strong>Company Description</strong></h4></font></p>
+                        <div class="sans-serif">
+                            <p>
+                                {{advertisment?.company.aboutUs}}
+                            </p>
+                        </div>
+
+                        <!-- Job description -->
+
+                             <p><font face="sans-serif"><h5><strong>What will you do?</strong></h5></font></p>
                                    <p></p>
-                                   <ul>
-                                       <li><span style="font-family: sans-serif; font-size: 1rem;">Wo development teams to create elegant, usable, r
-                                        esponsive and interactive interfaces</span></li>
-                                        <li><font face="sans-serif">TML, CSS, and JavaScript</font></li>
-                                        
-                                        <li><font face="sans-serif">Optimize applications for maximum speed and scalability</font></li>
-                                        <li><font face="sans-serif">Collaborate with other team members and stakeholders</font></li>
-                                        <li><font face="sans-serif">Contributing to some back-end experience, collaborating on APIs, and more</font></li>
-                                        <li><font face="sans-serif">Get feedback from, and build solutions for, users and customers</font></li>
-                                        <li><font face="sans-serif">Stay up-to-date with emerging technologies</font></li>
-                                        <li><font face="sans-serif">Make suggestions for better solutions for problems</font></li>
-                                        <li><font face="sans-serif">Ensure the technical feasibility of UI/UX designs</font></li>
-                                    </ul>
+                                   <p>{{advertisment?.jobDescription}}</p>
+                                   <p></p>
+                                   
+                                   <hr>
+                                     <p><span style="font-family: sans-serif; font-size: 1rem;"><h4><strong>Qualifications</strong></h4></span></p>
+                                     <p><span style="font-family: sans-serif; font-size: 1rem;"><h5><strong>More about you:</strong></h5></span></p>
+                                     <p></p>
+                                     <p>{{advertisment?.education}}</p>
+                                     <p></p>
+                                     <p><span style="font-family: sans-serif; font-size: 1rem;"><h5><strong>Requirements:</strong></h5></span></p>
                                     <p></p>
-                                    <p><font face="sans-serif"><br></font></p>
-                                    <p><font face="sans-serif"><b>Qualifications</b></font></p>
-                                    <p><font face="sans-serif"><b>More about you:</b></font></p>
+                                    <p>{{advertisment?.requirements}}</p>
                                     <p></p>
 
-                                    <ul>
-                                        <li><span style="font-family: sans-serif; font-size: 1rem;">You have work experience as a Frontend Engineer.</span></li>
-                                        <li><font face="sans-serif">You hold a BSc degree in Computer Science or other relevant field.</font></li>
-                                        <li><font face="sans-serif">You have great problem-solving skills and are a critical thinker.</font></li>
-                                        <li><font face="sans-serif">You are passionate to create good design and usability.</font></li>
-                                        <li><font face="sans-serif">You have profi of server-side CSS pre-processing platforms, such as LESS and SASS.</font></li>
-                                        <li><font face="sans-serif">You have proficient / Angular / Vue /…).</font></li>
-                                        <li><font face="sans-serif">You have basic understanding of testing tools like Jest / Mocha, Enzyme etc.</font></li>
-                                        <li><font face="sans-serif">Basic understanding of state-management tools is a plus.</font></li>
-                                        <li><font face="sans-serif">You have basic understanding of Node and NPM / Yarn.</font></li>
-                                        <li><font face="sans-serif">You have basic knowledge of build tools and task runners like Webpack, Gulp, Grunt etc.</font></li>
-                                        <li><font face="sans-serif">You have proficient understanding ofugging practices and techniques.</font></li>
-                                        <li><font face="sans-serif">You have proficient understanding of code versioning tools, such as Git.</font></li>
-                                        <li><font face="sans-serif">You are a team player with excellent communication skills.</font></li>
-                                        <li><font face="sans-serif">You are willing to learn more about backend technologies such as Java, Spring or Kotlin.</font></li>
-                                        <li><font face="sans-serif">Maybe you see yourself becoming a Full Stack Engineer in the future - great!</font></li>
-                                        <li><font face="sans-serif">You are genuinely curious about how things work,evelopment process etc.</font></li>
-                                        <li><font face="sans-serif">You build positive, lasting relationships with colleagues in the team.</font></li>
-                                    </ul>
-                                    <p></p>
-
-                                    
-                                    <p><font face="sans-serif"><b><br></b></font></p>
-                                    <p><font face="sans-serif"><b>Additional Information</b></font></p>
+                                    <hr>
+                                    <p><font face="sans-serif"><h4><strong>Additional Information</strong> </h4></font></p>
                                     <p><font face="sans-serif"><b>Why our employees choose us (and stay)?</b></font></p>
                                     <p></p>
-                                    <ul>
-                                        <li><font face="sans-serif">Cutting eloy something new every 50 seconds.</font></li>
-                                        <li><font face="sans-serif">Educational budget – Yourses or certifications.&nbsp;</font></li>
-                                        <li><font face="sans-serif"> means that we have to make our software platform scalable.</font></li>
-                                        <li><font face="sans-serif">ertical, or angular, we want to support the path that you want to carve.</font></li>
-                                        <li><font face="sans-serif"> educat in employee learning and development.</font></li>
-                                        <li><font face="sans-serif">Pay &amp; Perks –  a balanced lifestyle!</font></li>
-                                    </ul>
+                                    <p>{{advertisment?.offers}}</p>
                                     <p></p>
-                                    <p><br></p>
-
-                <p></p></div><a href="https://jobs.smartrecruiters.com/oneclick-ui/company/Infobip/publication/42bf53fb-c0e0-4061-ae89-6c9907becd82?dcr_id=DCRA1" class="btn btn-primary btn15 marginTopX col-sm-6" target="_blank">Apply</a>
+                                    <hr>
+                                    <br>
+            </div>
+                <button type="submit" id="application" class="btn btn-primary btn15 marginTopX col-sm-6" [routerLink]="['/application']" routerLinkActive="router-link-active"   >Apply for this position</button>
             </div>
         </div>

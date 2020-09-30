@@ -26,11 +26,12 @@ import { AdvertismentComponent } from './advertisment/advertisment.component';
 import { AdvertismentDetailComponent } from './advertisment/advertismentDetail/advertismentDetail.component';
 import { AboutComponent } from './about/about.component';
 import { UserEditComponent } from './user-edit/user-edit.component';
+import { ApplicationComponent } from './application/application.component';
 
 
 
 @NgModule({
-  declarations: [								
+  declarations: [									
     AppComponent,
       NavComponent,
       HomeComponent,
@@ -40,7 +41,8 @@ import { UserEditComponent } from './user-edit/user-edit.component';
       AdvertismentComponent,
       AdvertismentDetailComponent,
       AboutComponent,
-      UserEditComponent
+      UserEditComponent,
+      ApplicationComponent
    ],
   imports: [
     BrowserModule,

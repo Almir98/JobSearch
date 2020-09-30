@@ -25,7 +25,6 @@ export class AdvertismentDetailComponent implements OnInit {
   {
     this.advertismentService.getById(+this.route.snapshot.params['id']).subscribe((data: Advertisment) =>{
        this.advertisment=data;
-       console.log(this.advertisment);
      },error =>{
        this.alertify.error("Something went wrong");
      });

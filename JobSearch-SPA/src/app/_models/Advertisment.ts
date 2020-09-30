@@ -11,6 +11,7 @@ export interface Advertisment
     published: Date;
     toDate: Date;
     isActive: boolean;
+    
     requirements: string;
     bonusSkills: string;
     offers: string;
