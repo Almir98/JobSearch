@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { Gender } from 'src/app/_models/Gender';
 import { User } from 'src/app/_models/User';
+
 import { AlertifyService } from 'src/app/_services/alertify.service';
 import { AuthService } from 'src/app/_services/auth.service';
 import { GenderService } from 'src/app/_services/gender.service';
 import { CityService } from 'src/app/_services/city.service';
+import { City } from 'src/app/_models/City';
 
 @Component({
   selector: 'app-register',
@@ -14,8 +15,10 @@ import { CityService } from 'src/app/_services/city.service';
 })
 export class RegisterComponent implements OnInit {
 
-  genders:BsDropdownModule[];
-  cities:BsDropdownModule[];
+  genders:Gender[];
+  cities: City[]=[];
+
+
   user:any={};
 
   constructor(private genderService:GenderService,private alertify:AlertifyService,private authService:AuthService,
@@ -29,13 +32,10 @@ export class RegisterComponent implements OnInit {
 
   loadGenders()
   {
-    this.genderService.getAll().subscribe(genders=>{
-      
-      genders.forEach(element=>{
-        var el={genderId:element.genderId,genderType:element.genderType};
-        //console.log(el);
-        //this.genders.push(el);
-      });
+    this.genderService.getAll().subscribe(data=>{
+
+      this.genders=data;
+      console.log(this.genders);
     },error=>{
       console.log(error);
       this.alertify.error(error);
@@ -55,6 +55,10 @@ export class RegisterComponent implements OnInit {
 
   registerAccount()
   {
+
+
+
+    
     console.log(this.user);
   }
 

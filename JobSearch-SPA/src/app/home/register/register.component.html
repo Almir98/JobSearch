@@ -5,6 +5,7 @@
       <p><strong>Information:</strong> You have made changes. Any unsaved changes will be lost!</p>
     </div>
   </div>
+
   <form #register="ngForm" (ngSubmit)="registerAccount()">
     <div class="form-row">
       <div class="form-group col-md-6">
@@ -45,17 +46,18 @@
       </div>
       <div class="form-group col-md-6">
         <label>Gender<span class="required"> *</span></label>
-        <select class="form-control">
-          <option [ngValue]="undefined" selected disabled>Select gender</option>
-          <!-- <option *ngFor="let item of genders" [value]="item.genderId">{{ item.genderType }} -->
-          <!-- </option> -->
+        <select name="user.genderId" [(ngModel)]="user.genderId"  class="form-control">
+          <option selected disabled>Select city</option>
+          <option *ngFor="let item of genders" [value]="item.genderId">{{item?.genderType}}</option>
         </select>
       </div>
     </div>
     <div class="form-row">
       <div class="form-group col-md-6">
         <label for="inputState">City<span class="required"> *</span></label>
-        <select id="inputState" class="form-control">
+        <select name="user.cityId" [(ngModel)]="user.cityId"  class="form-control">
+          <option selected disabled>Select city</option>
+          <option *ngFor="let item of cities" [value]="item.cityId">{{item?.cityName}}</option>
         </select>
       </div>
     </div>

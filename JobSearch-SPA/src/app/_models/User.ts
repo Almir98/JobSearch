@@ -11,7 +11,7 @@ export interface User {
     passwordSalt: string;
 
     cityId?: number;
-    genderId: number;
+    genderId?: number;
 
     //user type
 }
