@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { appRoutes } from './routes';
 
@@ -27,11 +27,12 @@ import { AdvertismentDetailComponent } from './advertisment/advertismentDetail/a
 import { AboutComponent } from './about/about.component';
 import { UserEditComponent } from './user-edit/user-edit.component';
 import { ApplicationComponent } from './application/application.component';
+import { AdminDashboardComponent } from './adminDashboard/adminDashboard.component';
 
 
 
 @NgModule({
-  declarations: [									
+  declarations: [										
     AppComponent,
       NavComponent,
       HomeComponent,
@@ -42,7 +43,8 @@ import { ApplicationComponent } from './application/application.component';
       AdvertismentDetailComponent,
       AboutComponent,
       UserEditComponent,
-      ApplicationComponent
+      ApplicationComponent,
+      AdminDashboardComponent
    ],
   imports: [
     BrowserModule,
@@ -50,7 +52,8 @@ import { ApplicationComponent } from './application/application.component';
     HttpClientModule,
     FormsModule,
     BsDropdownModule.forRoot(),
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    ReactiveFormsModule,
   ],
   providers: [
     AuthService,

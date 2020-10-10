@@ -1,3 +1,5 @@
+import {UserType} from '../_models/UserType';
+
 export interface User {
 
     userId: number;
@@ -13,5 +15,6 @@ export interface User {
     cityId?: number;
     genderId?: number;
 
-    //user type
+    userType : UserType;
+
 }

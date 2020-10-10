@@ -15,7 +15,7 @@ import {UserService} from '../_services/user.service';
 })
 export class UserEditComponent implements OnInit {
 
-  user: User;
+  user: any={};
   @ViewChild('editProfile') editProfile:NgForm;
 
   constructor(private userService:UserService,private route:ActivatedRoute,private alertify:AlertifyService,
@@ -29,6 +29,7 @@ export class UserEditComponent implements OnInit {
   {
     this.userService.getUser(this.authService.decodedToken.nameid).subscribe((user:User)=>{
       this.user=user;
+      console.log(this.user);
     },error=>{
       this.alertify.error(error);
     });

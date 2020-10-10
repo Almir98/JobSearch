@@ -35,7 +35,6 @@ export class RegisterComponent implements OnInit {
     this.genderService.getAll().subscribe(data=>{
 
       this.genders=data;
-      console.log(this.genders);
     },error=>{
       console.log(error);
       this.alertify.error(error);
@@ -47,7 +46,6 @@ export class RegisterComponent implements OnInit {
     this.cityService.getAll().subscribe(data=>{
 
       this.cities=data;
-      console.log(this.cities);
     },error=>{
       this.alertify.error(error);
     })
@@ -55,10 +53,6 @@ export class RegisterComponent implements OnInit {
 
   registerAccount()
   {
-
-
-
-    
     console.log(this.user);
   }
 
