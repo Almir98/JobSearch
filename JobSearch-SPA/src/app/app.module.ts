@@ -28,11 +28,15 @@ import { AboutComponent } from './about/about.component';
 import { UserEditComponent } from './user-edit/user-edit.component';
 import { ApplicationComponent } from './application/application.component';
 import { AdminDashboardComponent } from './adminDashboard/adminDashboard.component';
+import { CityComponent } from './city/city.component';
+import { JobTypeComponent } from './jobType/jobType.component';
+import { AddCompanyComponent } from './addCompany/addCompany.component';
+import { AddAdvertismentComponent } from './addAdvertisment/addAdvertisment.component';
 
 
 
 @NgModule({
-  declarations: [										
+  declarations: [																
     AppComponent,
       NavComponent,
       HomeComponent,
@@ -44,7 +48,11 @@ import { AdminDashboardComponent } from './adminDashboard/adminDashboard.compone
       AboutComponent,
       UserEditComponent,
       ApplicationComponent,
-      AdminDashboardComponent
+      AdminDashboardComponent,
+      CityComponent,
+      JobTypeComponent,
+      AddCompanyComponent,
+      AddAdvertismentComponent
    ],
   imports: [
     BrowserModule,

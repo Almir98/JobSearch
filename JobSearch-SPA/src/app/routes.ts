@@ -10,6 +10,14 @@ import { AboutComponent } from './about/about.component';
 import { UserEditComponent } from './user-edit/user-edit.component';
 import { ApplicationComponent } from './application/application.component';
 import { AdminDashboardComponent } from './adminDashboard/adminDashboard.component';
+import { CityComponent } from './city/city.component';
+import { JobTypeComponent } from './jobType/jobType.component';
+import { AddCompanyComponent } from './addCompany/addCompany.component';
+import { AddAdvertismentComponent } from './addAdvertisment/addAdvertisment.component';
+
+
+
+
 
 import { AdvertismentDetailComponent } from './advertisment/advertismentDetail/advertismentDetail.component';
 
@@ -24,6 +32,14 @@ export const appRoutes: Routes = [
     {path:'contact',component:ContactComponent},
     {path:'about',component:AboutComponent},
     {path:'admin',component:AdminDashboardComponent},
+    {path:'AddCity',component:CityComponent},
+    {path:'AddJobType',component:JobTypeComponent},
+    {path:'AddCompany',component:AddCompanyComponent},
+    {path:'AddAdvertisment',component:AddAdvertismentComponent},
+
+
+
+
 
     {path:'application/:id',component:ApplicationComponent},
 

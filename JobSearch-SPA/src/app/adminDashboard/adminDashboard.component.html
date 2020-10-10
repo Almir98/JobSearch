@@ -1,3 +1,32 @@
-<p>
-  adminDashboard works!
-</p>
+<div id="container" class="container mt-5">
+
+  <h2>Admin options</h2>
+  <div class="card mb-4">
+    <h5 class="card-header">Add new city</h5>
+    <div class="card-body">
+      <button class="submit" type="submit" [routerLink]="['/AddCity']" routerLinkActive="router-link-active"  class="btn btn-primary ml-5">New city</button>
+    </div>
+  </div>
+
+  <div class="card mb-4 ml-5">
+    <h5 class="card-header">Add new job type</h5>
+    <div class="card-body">
+      <button class="submit" type="submit" [routerLink]="['/AddJobType']" routerLinkActive="router-link-active"  class="btn btn-primary ml-3">New job type</button>
+    </div>
+  </div>
+
+  <div class="card mb-4">
+    <h5 class="card-header">Add new company</h5>
+    <div class="card-body">
+      <button class="submit" type="submit" [routerLink]="['/AddCompany']" routerLinkActive="router-link-active"  class="btn btn-primary ml-4">New company</button>
+    </div>
+  </div>
+
+  <div class="card mb-4 ml-5">
+    <h5 class="card-header">Add new advertisment</h5>
+    <div class="card-body">
+      <button class="submit" type="submit" [routerLink]="['/AddAdvertisment']" routerLinkActive="router-link-active"  class="btn btn-primary ml-3">New advertisment</button>
+    </div>
+  </div>
+
+</div>

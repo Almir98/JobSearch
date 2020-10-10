@@ -1,0 +1,27 @@
+p{
+    font-size: 19px;
+}
+
+.card-body button{
+    width: 60%;
+    border-radius: 25px;
+    padding: 8px;
+}
+
+.card-body{
+    margin-left: 17%;
+}
+
+.card{
+    width: 47%;
+    display: inline-block;
+}
+
+h5{
+    text-align: center;
+}
+
+h2{
+    text-align: center;
+    margin-bottom: 2%;
+}

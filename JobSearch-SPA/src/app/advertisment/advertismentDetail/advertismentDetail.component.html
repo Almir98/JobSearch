@@ -1,3 +1,5 @@
+<div class="container mt-5">
+
 <div class="card flex-row flex-wrap" style="border: none">
     <div class="row col-sm-12 col-md-3">
        <!-- <img src="/rest/profile/photo/99xiuiihvkkzsU" class="img-fluid mx-auto d-block" alt=""> -->
@@ -63,3 +65,4 @@
     <button *ngIf="!loggedIn()" type="button" id="application" disabled class="btn btn-primary btn15 marginTopX col-sm-6">Apply for this position</button>
     <button *ngIf="loggedIn()" type="submit" id="application" class="btn btn-primary btn15 marginTopX col-sm-6" [routerLink]="['/application',advertisment?.advertismentId]" routerLinkActive="router-link-active">Apply for this position</button><br>
  </div>
+</div>

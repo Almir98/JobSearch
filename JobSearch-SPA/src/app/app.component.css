@@ -5,7 +5,11 @@ html, body
 
 #content
 {
-    min-height: 893px;
+    min-height: 997px;
+}
+
+#space{
+    margin-top: 40px;
 }
 
 #footer{
