@@ -16,6 +16,8 @@ namespace JobSearch.WebAPI.Mappers
             CreateMap<Database.Application, Model.Application>().ReverseMap();
             CreateMap<Database.Category, Model.Category>().ReverseMap();
             CreateMap<Database.City, Model.City>().ReverseMap();
+            CreateMap<Database.Country, Model.Country>().ReverseMap();
+
             CreateMap<Database.Company, Model.Company>().ReverseMap();
             CreateMap<Database.Gender, Model.Gender>().ReverseMap();
             CreateMap<Database.JobLevel, Model.JobLevel>().ReverseMap();

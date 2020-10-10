@@ -77,8 +77,10 @@ namespace JobSearch.WebAPI
 
             services.AddScoped<IService<Model.City, object>, BaseService<Model.City, object, Database.City>>();
             services.AddScoped<IService<Model.Gender, object>, BaseService<Model.Gender, object, Database.Gender>>();
-            
+
             //CRUD services
+
+            services.AddScoped<IService<Model.Country, object>, BaseService<Model.Country, object, Database.Country>>();
 
             services.AddScoped<ICRUDService<Model.Question,object,QuestionUpsert,QuestionUpsert>,BaseCRUDService<Model.Question,object,Database.Question,QuestionUpsert,QuestionUpsert>>();
             services.AddScoped<ICRUDService<Model.Advertisment, object, AdvertismentUpsertVM, AdvertismentUpsertVM>, AdvertismentService>();
