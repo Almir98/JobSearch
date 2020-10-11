@@ -40,6 +40,9 @@ namespace JobSearch.WebAPI.Mappers
             CreateMap<ApplicationUpsertVM, Database.Application>().ReverseMap();
             CreateMap<Model.Application, Database.Application>().ReverseMap();
 
+            CreateMap<JobTypeUpsertVM, Database.JobType>().ReverseMap();
+            CreateMap<Model.JobType, Database.JobType>().ReverseMap();
+
 
 
         }
