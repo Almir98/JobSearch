@@ -28,5 +28,4 @@ insert(jobtype: JobType)
   return this.http.post(this.baseUrl,jobtype);
 }
 
-
 }

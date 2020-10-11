@@ -44,6 +44,12 @@ namespace JobSearch.WebAPI.Mappers
             CreateMap<Model.JobType, Database.JobType>().ReverseMap();
 
 
+            CreateMap<CityUpsertVM, Database.City>().ReverseMap();
+            CreateMap<Model.City, Database.City>().ReverseMap();
+
+            CreateMap<CompanyUpsertVM, Database.Company>().ReverseMap();
+            CreateMap<Model.Company, Database.Company>().ReverseMap();
+
 
         }
     }

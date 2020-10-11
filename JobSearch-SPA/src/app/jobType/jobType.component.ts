@@ -33,14 +33,14 @@ export class JobTypeComponent implements OnInit {
   addJobType()
   {
     
+    console.log(this.addJob.value);
     
-    this.jobTypeService.insert(this.jobType).subscribe(data => {
+     this.jobTypeService.insert(this.jobType).subscribe(data => {
       
-      this.jobType=data;
+       this.jobType=this.addJob.value;
       
-      console.log(data);
-    })
-    //console.log(this.addJob.value);
+       console.log(data);
+     })
   }
 
 }

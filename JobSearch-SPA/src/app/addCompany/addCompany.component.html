@@ -1,7 +1,46 @@
 <div class="container mt-5">
+  <h2 id="title">Add new company</h2>
+  <div class="col-sm-13">
+    <div *ngIf="addcompany.dirty" class="alert alert-info">
+      <p><strong>Information:</strong> You have made changes. Any unsaved changes will be lost!</p>
+    </div>
+  </div>
 
-  <p>
-    addCompany works!
-  </p>
-  
+  <form #addcompany="ngForm" (ngSubmit)="addCompany()">
+
+    <div class="form-group col-md-8 mt-4">
+      <label>Company name<span class="required"> *</span></label>
+      <input type="text" class="form-control" required name="companyName" [(ngModel)]="company.companyName">
+    </div>
+
+    <div class="form-group col-md-8 mt-4">
+      <label>Phone<span class="required"> *</span></label>
+      <input type="text" class="form-control" required name="phone" [(ngModel)]="company.phone">
+    </div>
+
+    <div class="form-group col-md-8 mt-4">
+      <label>Email<span class="required"> *</span></label>
+      <input type="email" class="form-control" required name="email" [(ngModel)]="company.email">
+    </div>
+
+    <div class="form-group col-md-8 mt-4">
+      <label>Adress<span class="required"> *</span></label>
+      <input type="text" class="form-control" required name="adress" [(ngModel)]="company.adress">
+    </div>
+
+    <div class="form-group col-md-8 mt-4 mb-4">
+      <label>About us</label><span class="required"> *</span>
+     <textarea id="message" type="textarea" required class="form-control" name="message" [(ngModel)]="company.aboutUs"></textarea>
+    </div>
+
+    <div class="form-group col-md-8">
+      <label>Photo</label><span class="required"> *</span>
+      <div class="custom-file">
+        <input type="file" class="custom-file-input" name="photo" [(ngModel)]="company.photo">
+        <label class="custom-file-label">{{company?.photo}}</label>
+      </div>
+    </div>
+
+    <button [disabled]="!addcompany.valid" id="submit" type="submit" class="btn btn-primary">Save</button>
+  </form>
 </div>
