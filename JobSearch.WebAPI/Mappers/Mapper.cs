@@ -50,6 +50,8 @@ namespace JobSearch.WebAPI.Mappers
             CreateMap<CompanyUpsertVM, Database.Company>().ReverseMap();
             CreateMap<Model.Company, Database.Company>().ReverseMap();
 
+            CreateMap<SkillUpsert, Database.Skill>().ReverseMap();
+            CreateMap<Model.Skill, Database.Skill>().ReverseMap();
 
         }
     }

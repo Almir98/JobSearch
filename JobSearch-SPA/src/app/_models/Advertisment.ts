@@ -25,10 +25,6 @@ export class Advertisment
     jobLevelId?: number;
     jobTypeId?: number;
 
-
-
-
-
     company?: Company;
     city?: City;
     jobLevel?: JobLevel;

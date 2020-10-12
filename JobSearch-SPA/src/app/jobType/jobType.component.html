@@ -5,14 +5,11 @@
       <p><strong>Information:</strong> You have made changes. Any unsaved changes will be lost!</p>
     </div>
   </div>
-  <form [formGroup]="addJob" (ngSubmit)="addJobType()">
-
+  <form #addJob="ngForm" (ngSubmit)="addJobType()">
     <div class="form-group m-4">
       <label>Type name<span class="required"> *</span></label>
-      <input [ngClass]="{'is-invalid': addJob.get('jobTypeName').errors && addJob.get('jobTypeName').touched}" class="form-control" formControlName="jobTypeName">
-
-      <div class="invalid-feedback" *ngIf="addJob.get('jobTypeName').touched && addJob.get('jobTypeName').hasError('required')">Type name as is required</div>
+      <input class="form-control" name="jobType.jobTypeName" [(ngModel)]="jobType.jobTypeName">
     </div>
-    <button [disabled]="!addJob.valid" class="btn btn-primary mt-4" id="submit" >Save</button>
+    <button [disabled]="!addJob.valid" class="btn btn-primary mt-4 " id="submit" >Save</button>
   </form>
 </div>

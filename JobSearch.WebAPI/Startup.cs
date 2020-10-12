@@ -89,9 +89,9 @@ namespace JobSearch.WebAPI
             services.AddScoped<ICRUDService<Model.Application, object, ApplicationUpsertVM, ApplicationUpsertVM>, ApplicationService>();
             services.AddScoped<ICRUDService<Model.City, object, CityUpsertVM, CityUpsertVM>, CityService>();
             services.AddScoped<ICRUDService<Model.JobType, object, JobTypeUpsertVM, JobTypeUpsertVM>, JobTypeService>();
-
             services.AddScoped<ICRUDService<Model.Company, object, CompanyUpsertVM, CompanyUpsertVM>, CompanyService>();
 
+            services.AddScoped<ICRUDService<Model.Skill, object, SkillUpsert, SkillUpsert>, SkillService>();
 
         }
 

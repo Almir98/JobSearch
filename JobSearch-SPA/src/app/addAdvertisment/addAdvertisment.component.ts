@@ -12,6 +12,8 @@ import { JobTypeService } from '../_services/jobType.service';
 import { JobType } from '../_models/JobType';
 import { AdvertismentDetailComponent } from '../advertisment/advertismentDetail/advertismentDetail.component';
 import { Advertisment } from '../_models/Advertisment';
+import { AdvertismentService } from '../_services/advertisment.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -30,7 +32,8 @@ export class AddAdvertismentComponent implements OnInit {
   jobTypes: JobType[];
 
   constructor(private companyService: CompanyService, private cityService: CityService, private jobLevelService: JobLevelService,
-    private alertify:AlertifyService, private categoryService: CategoryService, private jobTypeService: JobTypeService) { }
+    private alertify:AlertifyService, private categoryService: CategoryService, private jobTypeService: JobTypeService,
+    private advertismentService: AdvertismentService,private router: Router) { }
 
   ngOnInit() {
     this.loadJobLevels();
@@ -42,15 +45,19 @@ export class AddAdvertismentComponent implements OnInit {
 
   addAdvertisment()
   {
-    console.log(this.advertisment);
+    this.advertismentService.insert(this.advertisment).subscribe((data:Advertisment)=>{
+      this.advertisment=data;
+      this.alertify.success("Successfully added");
+      this.router.navigate(['/admin']);
+    },error=>{
+      this.alertify.error("Something went wrong");
+    })
   }
 
   loadJobLevels()
   {
     this.jobLevelService.getAll().subscribe(data =>{
       this.jobLevel=data;
-
-      console.log(this.jobLevel);
     },error=>{
       this.alertify.error("Something went wrong");
     })
@@ -58,9 +65,7 @@ export class AddAdvertismentComponent implements OnInit {
 
   loadCities(){
     this.cityService.getAll().subscribe(data=>{
-
       this.cities=data;
-      console.log(this.cities);
     },error=>{
       this.alertify.error("Something went wrong");
     })
@@ -68,9 +73,7 @@ export class AddAdvertismentComponent implements OnInit {
 
   loadCompanies(){
     this.companyService.getAll().subscribe(data=>{
-
       this.companies=data;
-      console.log(this.companies);
     },error=>{
       this.alertify.error("Something went wrong");
     })
@@ -78,9 +81,7 @@ export class AddAdvertismentComponent implements OnInit {
 
   loadCategories(){
     this.categoryService.getAll().subscribe(data=>{
-
       this.categories=data;
-      console.log(this.categories);
     },error=>{
       this.alertify.error("Something went wrong");
     })
@@ -90,10 +91,8 @@ export class AddAdvertismentComponent implements OnInit {
   {
     this.jobTypeService.getAll().subscribe(data =>{
       this.jobTypes=data;
-      console.log(this.jobTypes);
     },error=>{
       this.alertify.error("Something went wrong");
     })
   }
-
 }

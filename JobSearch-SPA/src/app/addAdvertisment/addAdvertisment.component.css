@@ -20,6 +20,10 @@ span{
     margin-bottom: 3%;
 }
 
+#button{
+    padding-left: 40px;
+}
+
 #form{
     margin-left:10%;
 }
