@@ -32,11 +32,13 @@ import { CityComponent } from './city/city.component';
 import { JobTypeComponent } from './jobType/jobType.component';
 import { AddCompanyComponent } from './addCompany/addCompany.component';
 import { AddAdvertismentComponent } from './addAdvertisment/addAdvertisment.component';
+import { AdminaplicationComponent } from './adminaplication/adminaplication.component';
+import { AddskillComponent } from './addskill/addskill.component';
 
 
 
 @NgModule({
-  declarations: [																
+  declarations: [																						
     AppComponent,
       NavComponent,
       HomeComponent,
@@ -52,7 +54,9 @@ import { AddAdvertismentComponent } from './addAdvertisment/addAdvertisment.comp
       CityComponent,
       JobTypeComponent,
       AddCompanyComponent,
-      AddAdvertismentComponent
+      AddAdvertismentComponent,
+      AdminaplicationComponent,
+      AddskillComponent
    ],
   imports: [
     BrowserModule,

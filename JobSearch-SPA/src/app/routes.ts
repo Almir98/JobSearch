@@ -20,6 +20,8 @@ import { AddAdvertismentComponent } from './addAdvertisment/addAdvertisment.comp
 
 
 import { AdvertismentDetailComponent } from './advertisment/advertismentDetail/advertismentDetail.component';
+import { AdminaplicationComponent } from './adminaplication/adminaplication.component';
+import { AddskillComponent } from './addskill/addskill.component';
 
 
 export const appRoutes: Routes = [
@@ -36,6 +38,9 @@ export const appRoutes: Routes = [
     {path:'AddJobType',component:JobTypeComponent},
     {path:'AddCompany',component:AddCompanyComponent},
     {path:'AddAdvertisment',component:AddAdvertismentComponent},
+    {path:'AllAplications',component: AdminaplicationComponent},
+    {path:'AllAplications',component: AdminaplicationComponent},
+    {path:'AddSkill',component: AddskillComponent},
 
 
 

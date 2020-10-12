@@ -4,7 +4,7 @@ import {JobLevel} from './JobLevel';
 import {JobType} from './JobType';
 
 
-export interface Advertisment 
+export class Advertisment 
 {
     advertismentId: number;
     categoryName: string;
@@ -24,6 +24,10 @@ export interface Advertisment
     cityId?: number;
     jobLevelId?: number;
     jobTypeId?: number;
+
+
+
+
 
     company?: Company;
     city?: City;

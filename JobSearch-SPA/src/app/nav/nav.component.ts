@@ -26,8 +26,6 @@ export class NavComponent implements OnInit {
 
   login()
   {
-   
-
     this.authService.login(this.model).subscribe(next=>{
 
       this.alert.success('Logged in successfully');
@@ -35,28 +33,25 @@ export class NavComponent implements OnInit {
 
       this.userService.getUser(this.authService.decodedToken.nameid).subscribe((data:User)=>{
         this.user=data;
-        console.log(this.user);
-      
-      if(this.user.userType.userTypeId == 1)
-      {
+      if(this.user.userType.userTypeId == 1){
+        this.router.navigate(['/admin']);
         this.status=true;
       }
-      else
-      {
+      else{
+        this.router.navigate(['/home']);
         this.status=false;
       }
-        console.log(this.status);
       },error=>{
         this.alert.error("Error");
       });
 
-      if(this.status==true)
-      {
-        this.router.navigate(['/home']);
-      }
-      else{
-        this.router.navigate(['/admin']);
-      }
+      // if(this.status==true)
+      // {
+      //   this.router.navigate(['/home']);
+      // }
+      // else{
+      //   this.router.navigate(['/admin']);
+      // }
     },error=>{
       
       this.alert.error('Something went wrong');

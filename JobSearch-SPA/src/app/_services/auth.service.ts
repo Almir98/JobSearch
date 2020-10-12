@@ -44,6 +44,4 @@ login(model:any)
     const token=localStorage.getItem('token');
     return !this.helper.isTokenExpired(token);
   }
-
-
 }

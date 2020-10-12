@@ -21,7 +21,7 @@ import { Advertisment } from '../_models/Advertisment';
 })
 export class AddAdvertismentComponent implements OnInit {
 
-  advertisment: any={};
+  advertisment: Advertisment = new Advertisment();
     
   jobLevel: JobLevel[];
   cities: City[];
