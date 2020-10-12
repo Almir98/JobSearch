@@ -17,12 +17,16 @@ export interface Advertisment
     offers: string;
     education: string;
     jobDescription: string;
+    candidateDescription: string;
 
-    company: Company;
-    city: City;
-    jobLevel: JobLevel;
-    jobType: JobType;
+    companyId?: number;
+    categoryId?: number;
+    cityId?: number;
+    jobLevelId?: number;
+    jobTypeId?: number;
 
-
-
+    company?: Company;
+    city?: City;
+    jobLevel?: JobLevel;
+    jobType?: JobType;
 }

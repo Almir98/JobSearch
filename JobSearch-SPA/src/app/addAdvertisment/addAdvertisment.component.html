@@ -1,7 +1,100 @@
 <div class="container mt-5">
+  <h2 id="title">Add new advertisment</h2>
+  <div class="col-sm-13">
+    <div *ngIf="advertismentForm.dirty" class="alert alert-info">
+      <p><strong>Information:</strong> You have made changes. Any unsaved changes will be lost!</p>
+    </div>
+  </div>
 
-  <p>
-    addAdvertisment works!
-  </p>
-  
+   <form id="form" #advertismentForm="ngForm" (ngSubmit)="addAdvertisment()">
+
+    <div class="form-group col-md-9 mt-4 ml-5">
+      <label>Title of advertisment:<span class="required"> *</span></label>
+      <input type="text" class="form-control" required name="categoryName" [(ngModel)]="advertisment.categoryName">
+    </div>
+
+    <div class="form-group col-md-9 ml-5 mt-4">
+      <label>Select city</label>
+      <select class="form-control" name="advertisment.cityId" [(ngModel)]="advertisment.cityId">
+        <option selected disabled>Choose</option>
+        <option *ngFor="let item of cities" [value]="item.cityId">{{item?.cityName}}</option>
+      </select>
+    </div>
+
+    <div class="form-group col-md-9 ml-5 mt-4">
+      <label>Select company</label>
+      <select class="form-control" name="advertisment.companyId" [(ngModel)]="advertisment.companyId">
+        <option selected disabled>Choose</option>
+        <option *ngFor="let item of companies" [value]="item.companyId">{{item?.companyName}}</option>
+      </select>
+    </div>
+
+    <div class="form-group col-md-9 ml-5 mt-4">
+      <label>Select category</label>
+      <select class="form-control" name="advertisment.categoryId" [(ngModel)]="advertisment.categoryId">
+        <option selected disabled>Choose</option>
+        <option *ngFor="let item of categories" [value]="item.categoryId">{{item?.categoryName}}</option>
+      </select>
+    </div>
+    
+    <div class="form-group col-md-9 ml-5 mt-4">
+      <label>Select job level</label>
+      <select class="form-control" name="advertisment.jobLevelId" [(ngModel)]="advertisment.jobLevelId">
+        <option selected disabled>Choose</option>
+        <option *ngFor="let item of jobLevel" [value]="item.jobLevelId">{{item?.levelName}}</option>
+      </select>
+    </div>
+
+    <div class="form-group col-md-9 ml-5 mt-4">
+      <label>Select job level</label>
+      <select class="form-control" name="advertisment.jobTypeId" [(ngModel)]="advertisment.jobTypeId">
+        <option selected disabled>Choose</option>
+        <option *ngFor="let item of jobTypes" [value]="item.jobTypeId">{{item?.jobTypeName}}</option>
+      </select>
+    </div>
+
+    <div class="form-group col-md-9 mt-4 ml-5">
+      <label>Publihed:<span class="required"> *</span></label>
+      <input type="date" class="form-control" required name="published" [(ngModel)]="advertisment.published">
+    </div>
+
+    <div class="form-group col-md-9 mt-4 ml-5">
+      <label>To date:<span class="required"> *</span></label>
+      <input type="date" class="form-control" required name="toDate" [(ngModel)]="advertisment.toDate">
+    </div>
+
+    <div class="form-group col-md-9 ml-5">
+      <label>Requirements</label><span class="required"> *</span>
+       <textarea id="message" type="textarea" rows="4" required class="form-control" name="requirements" [(ngModel)]="advertisment.requirements"></textarea>
+    </div>
+
+    <div class="form-group col-md-9 ml-5">
+      <label>Bonus skills</label><span class="required"> *</span>
+       <textarea id="message" type="textarea" rows="4" required class="form-control" name="bonusSkills" [(ngModel)]="advertisment.bonusSkills"></textarea>
+    </div>
+
+    <div class="form-group col-md-9 ml-5">
+      <label>Offers</label><span class="required"> *</span>
+       <textarea id="message" type="textarea" rows="4" required class="form-control" name="offers" [(ngModel)]="advertisment.offers"></textarea>
+    </div>
+
+    <div class="form-group col-md-9 ml-5">
+      <label>Education level:</label><span class="required"> *</span>
+       <textarea id="message" type="textarea" rows="4" required class="form-control" name="education" [(ngModel)]="advertisment.education"></textarea>
+    </div>
+
+    <div class="form-group col-md-9 ml-5">
+      <label>Candidate description:</label><span class="required"> *</span>
+       <textarea id="message" type="textarea" rows="4" required class="form-control" name="candidateDescription" [(ngModel)]="advertisment.candidateDescription"></textarea>
+    </div>
+
+    <div class="form-group col-md-9 ml-5">
+      <label>Job description:</label><span class="required"> *</span>
+       <textarea id="message" type="textarea" rows="4" required class="form-control" name="jobDescription" [(ngModel)]="advertisment.jobDescription"></textarea>
+    </div>
+    
+    <button [disabled]="!advertismentForm.valid" id="submit" type="submit" class="btn btn-primary mb-4">Save</button>
+  </form> 
 </div>
+
+
