@@ -34,6 +34,7 @@ namespace JobSearch.WebAPI.Database
         {
             if (!optionsBuilder.IsConfigured)
             {
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
                 optionsBuilder.UseSqlServer("Server=.;Database=SearchJob;Integrated Security=True;Trusted_Connection=True;");
             }
         }
@@ -115,13 +116,7 @@ namespace JobSearch.WebAPI.Database
 
                 entity.Property(e => e.ApplicationDate).HasColumnType("date");
 
-                entity.Property(e => e.Cv)
-                    .HasColumnName("CV")
-                    .HasMaxLength(1);
-
-                entity.Property(e => e.Description).HasMaxLength(1);
-
-                entity.Property(e => e.Motivation).HasMaxLength(1);
+                entity.Property(e => e.Cv).HasColumnName("CV");
 
                 entity.Property(e => e.UserId).HasColumnName("UserID");
 
@@ -178,6 +173,8 @@ namespace JobSearch.WebAPI.Database
                     .HasMaxLength(50);
 
                 entity.Property(e => e.Photo).HasMaxLength(1);
+
+                entity.Property(e => e.Url).HasMaxLength(50);
             });
 
             modelBuilder.Entity<Country>(entity =>

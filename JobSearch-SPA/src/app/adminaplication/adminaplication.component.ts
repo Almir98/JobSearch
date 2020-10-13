@@ -27,7 +27,6 @@ export class AdminaplicationComponent implements OnInit {
   {
     return this.applicationService.getAll().subscribe((data:Application[])=>{
       this.applications=data;
-      console.log(this.applications);
     },error => {
       this.alertify.error("Something went wrong");
     })

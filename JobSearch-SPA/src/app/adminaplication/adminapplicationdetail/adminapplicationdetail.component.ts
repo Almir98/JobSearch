@@ -23,7 +23,6 @@ export class AdminapplicationdetailComponent implements OnInit {
   {
     this.applicationService.getById(+this.route.snapshot.params['id']).subscribe((data:Application)=>{
       this.application=data;
-      console.log(this.application);
     },error => {
       this.alertify.error("Something went wrong");
     })

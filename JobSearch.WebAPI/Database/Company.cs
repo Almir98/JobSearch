@@ -17,6 +17,7 @@ namespace JobSearch.WebAPI.Database
         public string Adress { get; set; }
         public string AboutUs { get; set; }
         public string Photo { get; set; }
+        public string Url { get; set; }
 
         public virtual ICollection<Advertisment> Advertisment { get; set; }
     }

@@ -18,9 +18,8 @@ export class ApplicationComponent implements OnInit {
 
   user: User;
   advertisment: Advertisment;
-  application: any={};
-
-
+  application: Application = new Application();
+  
   constructor(private applicationService: ApplicationService,private alertify: AlertifyService, private route: ActivatedRoute,
     private authService: AuthService, private userService: UserService, private router: Router, private advertismentService: AdvertismentService)
   {
@@ -29,6 +28,7 @@ export class ApplicationComponent implements OnInit {
   ngOnInit() {
     this.loadUser();
     this.loadAdvertisment()
+    this.application.applicationDate=new Date();
   }
 
   loadUser(){
@@ -50,15 +50,16 @@ export class ApplicationComponent implements OnInit {
 
   sendApplication()
   {
-    console.log("aa");
+    this.application.userId = this.authService.decodedToken.nameid;
+    this.application.advertismentId = +this.route.snapshot.params['id'];
 
+    this.applicationService.insert(this.application).subscribe((data:Application) => {
+      this.application=data;
+      console.log(this.application);
+      this.alertify.success("Successfully");
+      this.router.navigate(['/home']);
+    },error =>{
+      this.alertify.error("Something went wrong");
+    })
   }
-
-
-
-
-
-
-
-
 }

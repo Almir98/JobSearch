@@ -22,7 +22,8 @@ export class NavComponent implements OnInit {
 
   constructor(public authService:AuthService,private userService: UserService,private alert:AlertifyService,private router:Router) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
 
   login()
   {
@@ -45,13 +46,6 @@ export class NavComponent implements OnInit {
         this.alert.error("Error");
       });
 
-      // if(this.status==true)
-      // {
-      //   this.router.navigate(['/home']);
-      // }
-      // else{
-      //   this.router.navigate(['/admin']);
-      // }
     },error=>{
       
       this.alert.error('Something went wrong');

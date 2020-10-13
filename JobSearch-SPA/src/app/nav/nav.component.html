@@ -1,9 +1,10 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-  <a class="navbar-brand" [routerLink]="['/home']" routerLinkActive="router-link-active" >Konkurisi</a>
+  <a class="navbar-brand"*ngIf="status==false" [routerLink]="['/home']" routerLinkActive="router-link-active" >Konkurisi</a>
+  <a class="navbar-brand" *ngIf="status==true" [routerLink]="['/admin']" routerLinkActive="router-link-active" >Konkurisi</a>
 
     <ul class="navbar-nav mr-auto">
       <li class="nav-item" routerLinkActive="active">
-        <a *ngIf="loggedIn()" class="nav-link" [routerLink]="['/contact']"><i class="fa fa-envelope"></i> Contact</a>
+        <a *ngIf="!loggedIn() || status==false" class="nav-link" [routerLink]="['/contact']"><i class="fa fa-envelope"></i> Contact</a>
       </li>
       <li class="nav-item" routerLinkActive="active">
         <a class="nav-link" [routerLink]="['/question']"><i class="fa fa-question"></i> FAQ</a>
@@ -11,7 +12,7 @@
       <li class="nav-item" routerLinkActive="active">
         <a class="nav-link" [routerLink]="['/about']"><i class="fa fa-info-circle"></i> About project</a>
       </li>
-      <li *ngIf="loggedIn()" class="nav-item" routerLinkActive="active">
+      <li *ngIf="!loggedIn() || status==false" class="nav-item" routerLinkActive="active">
         <a class="nav-link" [routerLink]="['/EditProfile']" routerLinkActive="router-link-active" ><i class="fa fa-user"></i> Edit profile</a>
       </li>
       <li  class="nav-item" routerLinkActive="active">
