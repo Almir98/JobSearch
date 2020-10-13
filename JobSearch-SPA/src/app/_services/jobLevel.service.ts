@@ -18,6 +18,9 @@ getAll(): Observable<JobLevel[]>
   return this.http.get<JobLevel[]>(this.baseUrl);
 }
 
-
+insert(level: JobLevel)
+{
+  return this.http.post(this.baseUrl,level);
+}
 
 }

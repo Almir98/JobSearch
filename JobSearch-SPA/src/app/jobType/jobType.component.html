@@ -6,9 +6,9 @@
     </div>
   </div>
   <form #addJob="ngForm" (ngSubmit)="addJobType()">
-    <div class="form-group m-4">
+    <div class="form-group col-md-8 mt-4">
       <label>Type name<span class="required"> *</span></label>
-      <input class="form-control" name="jobType.jobTypeName" [(ngModel)]="jobType.jobTypeName">
+      <input type="text" class="form-control" required name="jobType.jobTypeName" [(ngModel)]="jobType.jobTypeName">
     </div>
     <button [disabled]="!addJob.valid" class="btn btn-primary mt-4 " id="submit" >Save</button>
   </form>

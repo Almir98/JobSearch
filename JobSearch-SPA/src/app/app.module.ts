@@ -34,11 +34,13 @@ import { AddCompanyComponent } from './addCompany/addCompany.component';
 import { AddAdvertismentComponent } from './addAdvertisment/addAdvertisment.component';
 import { AdminaplicationComponent } from './adminaplication/adminaplication.component';
 import { AddskillComponent } from './addskill/addskill.component';
+import { AddCategoryComponent } from './addCategory/addCategory.component';
+import { AddJobLevelComponent } from './addJobLevel/addJobLevel.component';
 
 
 
 @NgModule({
-  declarations: [																						
+  declarations: [																									
     AppComponent,
       NavComponent,
       HomeComponent,
@@ -56,7 +58,9 @@ import { AddskillComponent } from './addskill/addskill.component';
       AddCompanyComponent,
       AddAdvertismentComponent,
       AdminaplicationComponent,
-      AddskillComponent
+      AddskillComponent,
+      AddCategoryComponent,
+      AddJobLevelComponent
    ],
   imports: [
     BrowserModule,

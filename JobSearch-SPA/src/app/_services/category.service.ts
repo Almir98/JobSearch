@@ -9,7 +9,7 @@ import { Category } from '../_models/Category';
 })
 export class CategoryService {
 
-  baseUrl= environment.apiUrl+'/Category';
+  baseUrl=environment.apiUrl+'/Category';
 
 constructor(private http: HttpClient) { }
 
@@ -17,5 +17,16 @@ getAll(): Observable<Category[]>
 {
   return this.http.get<Category[]>(this.baseUrl);
 }
+
+getById(id: number): Observable<Category>
+{
+  return this.http.get<Category>(this.baseUrl+'/id?id='+id);
+}
+
+insert(category: Category)
+{
+  return this.http.post(this.baseUrl,category);
+}
+
 
 }

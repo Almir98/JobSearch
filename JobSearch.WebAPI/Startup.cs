@@ -82,7 +82,6 @@ namespace JobSearch.WebAPI
             //CRUD services
 
             services.AddScoped<IService<Model.Country, object>, BaseService<Model.Country, object, Database.Country>>();
-            services.AddScoped<IService<Model.JobLevel, object>, BaseService<Model.JobLevel, object, Database.JobLevel>>();
 
             services.AddScoped<ICRUDService<Model.Question,object,QuestionUpsert,QuestionUpsert>,BaseCRUDService<Model.Question,object,Database.Question,QuestionUpsert,QuestionUpsert>>();
             services.AddScoped<ICRUDService<Model.Advertisment, object, AdvertismentUpsertVM, AdvertismentUpsertVM>, AdvertismentService>();
@@ -90,8 +89,10 @@ namespace JobSearch.WebAPI
             services.AddScoped<ICRUDService<Model.City, object, CityUpsertVM, CityUpsertVM>, CityService>();
             services.AddScoped<ICRUDService<Model.JobType, object, JobTypeUpsertVM, JobTypeUpsertVM>, JobTypeService>();
             services.AddScoped<ICRUDService<Model.Company, object, CompanyUpsertVM, CompanyUpsertVM>, CompanyService>();
-
             services.AddScoped<ICRUDService<Model.Skill, object, SkillUpsert, SkillUpsert>, SkillService>();
+
+            services.AddScoped<ICRUDService<Model.Category, object, CategoryUpsertVM, CategoryUpsertVM>, CategoryService>();
+            services.AddScoped<ICRUDService<Model.JobLevel, object, JobLevelUpsert, JobLevelUpsert>, JobLevelService>();
 
         }
 

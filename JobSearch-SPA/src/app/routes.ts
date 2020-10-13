@@ -14,14 +14,13 @@ import { CityComponent } from './city/city.component';
 import { JobTypeComponent } from './jobType/jobType.component';
 import { AddCompanyComponent } from './addCompany/addCompany.component';
 import { AddAdvertismentComponent } from './addAdvertisment/addAdvertisment.component';
-
-
-
+import { AddJobLevelComponent } from './addJobLevel/addJobLevel.component';
 
 
 import { AdvertismentDetailComponent } from './advertisment/advertismentDetail/advertismentDetail.component';
 import { AdminaplicationComponent } from './adminaplication/adminaplication.component';
 import { AddskillComponent } from './addskill/addskill.component';
+import { AddCategoryComponent } from './addCategory/addCategory.component';
 
 
 export const appRoutes: Routes = [
@@ -41,8 +40,11 @@ export const appRoutes: Routes = [
     {path:'AllAplications',component: AdminaplicationComponent},
     {path:'AllAplications',component: AdminaplicationComponent},
     {path:'AddSkill',component: AddskillComponent},
+    {path:'AddCategory',component: AddCategoryComponent},
+    {path:'AddJobLevel',component: AddJobLevelComponent},
 
 
+    
 
 
 

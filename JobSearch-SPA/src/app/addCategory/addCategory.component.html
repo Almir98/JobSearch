@@ -1,0 +1,15 @@
+<div class="container mt-5">
+  <h2 id="title">Add new category</h2>
+  <div class="col-sm-13">
+    <div *ngIf="categoryRef.dirty" class="alert alert-info">
+      <p><strong>Information:</strong> You have made changes. Any unsaved changes will be lost!</p>
+    </div>
+  </div>
+  <form #categoryRef="ngForm" (ngSubmit)="addCategory()">
+    <div class="form-group col-md-8 mt-4">
+      <label>Category name<span class="required"> *</span></label>
+      <input type="text" class="form-control" required name="skill.skillName" [(ngModel)]="category.categoryName">
+    </div>
+    <button [disabled]="!categoryRef.valid" class="btn btn-primary mt-4 " id="submit" >Save</button>
+  </form>
+</div>

@@ -17,7 +17,6 @@ namespace JobSearch.WebAPI.Mappers
             CreateMap<Database.Category, Model.Category>().ReverseMap();
             CreateMap<Database.City, Model.City>().ReverseMap();
             CreateMap<Database.Country, Model.Country>().ReverseMap();
-
             CreateMap<Database.Company, Model.Company>().ReverseMap();
             CreateMap<Database.Gender, Model.Gender>().ReverseMap();
             CreateMap<Database.JobLevel, Model.JobLevel>().ReverseMap();
@@ -27,12 +26,10 @@ namespace JobSearch.WebAPI.Mappers
             CreateMap<Database.UserType, Model.UserType>().ReverseMap();
 
             CreateMap<UserVM, Database.Users>().ReverseMap();
-
             CreateMap<UserUpsertVM, Database.Users>().ReverseMap();
 
             CreateMap<QuestionUpsert, Database.Question>().ReverseMap();
             CreateMap<Model.Question, Database.Question>().ReverseMap();
-
 
             CreateMap<AdvertismentUpsertVM, Database.Advertisment>().ReverseMap();
             CreateMap<Model.Advertisment, Database.Advertisment>().ReverseMap();
@@ -43,7 +40,6 @@ namespace JobSearch.WebAPI.Mappers
             CreateMap<JobTypeUpsertVM, Database.JobType>().ReverseMap();
             CreateMap<Model.JobType, Database.JobType>().ReverseMap();
 
-
             CreateMap<CityUpsertVM, Database.City>().ReverseMap();
             CreateMap<Model.City, Database.City>().ReverseMap();
 
@@ -52,6 +48,12 @@ namespace JobSearch.WebAPI.Mappers
 
             CreateMap<SkillUpsert, Database.Skill>().ReverseMap();
             CreateMap<Model.Skill, Database.Skill>().ReverseMap();
+
+            CreateMap<CategoryUpsertVM, Database.Category>().ReverseMap();
+            CreateMap<Model.Category, Database.Category>().ReverseMap();
+
+            CreateMap<JobLevelUpsert, Database.JobLevel>().ReverseMap();
+            CreateMap<Model.JobLevel, Database.JobLevel>().ReverseMap();
 
         }
     }

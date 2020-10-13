@@ -1,4 +1,4 @@
-export interface JobLevel {
+export class JobLevel {
 
         jobLevelId: number;
         levelName : string;
