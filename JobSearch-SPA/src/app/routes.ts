@@ -15,18 +15,16 @@ import { JobTypeComponent } from './jobType/jobType.component';
 import { AddCompanyComponent } from './addCompany/addCompany.component';
 import { AddAdvertismentComponent } from './addAdvertisment/addAdvertisment.component';
 import { AddJobLevelComponent } from './addJobLevel/addJobLevel.component';
-
-
 import { AdvertismentDetailComponent } from './advertisment/advertismentDetail/advertismentDetail.component';
 import { AdminaplicationComponent } from './adminaplication/adminaplication.component';
 import { AddskillComponent } from './addskill/addskill.component';
 import { AddCategoryComponent } from './addCategory/addCategory.component';
-
+import { AdminapplicationdetailComponent } from './adminaplication/adminapplicationdetail/adminapplicationdetail.component';
 
 export const appRoutes: Routes = [
 
     {path:'home',component:HomeComponent},
-    {path:'advertisment/:id',component:AdvertismentDetailComponent},
+    {path:'AdvertismentDetail/:id',component:AdvertismentDetailComponent},
     {path:'register',component:RegisterComponent},
     //{path:'register',component:RegisterComponent,canActivate:[AuthGuard]},
     {path:'question',component:QuestionComponent},
@@ -38,10 +36,11 @@ export const appRoutes: Routes = [
     {path:'AddCompany',component:AddCompanyComponent},
     {path:'AddAdvertisment',component:AddAdvertismentComponent},
     {path:'AllAplications',component: AdminaplicationComponent},
-    {path:'AllAplications',component: AdminaplicationComponent},
     {path:'AddSkill',component: AddskillComponent},
     {path:'AddCategory',component: AddCategoryComponent},
     {path:'AddJobLevel',component: AddJobLevelComponent},
+    {path:'ApplicationDetails/:id',component: AdminapplicationdetailComponent},
+
 
 
     

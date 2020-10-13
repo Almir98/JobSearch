@@ -1,0 +1,122 @@
+<div class="container mt-5">
+  <h2 id="title">Application details</h2>
+  <hr><h5><strong>Users information:</strong></h5>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label>First name</label>
+      <input type="email" class="form-control" readonly placeholder="{{application?.user.firstName}}">
+    </div>
+    <div class="form-group col-md-6">
+      <label>Last name</label>
+      <input type="email" class="form-control" readonly placeholder="{{application?.user.lastName}}">
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label>Email</label>
+      <input type="email" class="form-control" readonly placeholder="{{application?.user.email}}">
+    </div>
+    <div class="form-group col-md-6">
+      <label>Phone number</label>
+      <input type="number" class="form-control" readonly placeholder="{{application?.user.phone}}">
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label>Adress</label>
+      <input type="email" class="form-control" readonly placeholder="{{application?.user.adress}}">
+    </div>
+    <div class="form-group col-md-6">
+      <label>Birth date</label>
+      <input type="email" class="form-control" readonly placeholder="{{application?.user.yearOfBirth | date}}">
+    </div>
+  </div>
+
+  <hr><h5><strong>Company information:</strong></h5>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label>Position</label>
+      <input type="email" class="form-control" readonly placeholder="{{application?.advertisment.categoryName}}">
+    </div>
+    <div class="form-group col-md-6">
+      <label>Company name</label>
+      <input type="email" class="form-control" readonly placeholder="{{application?.advertisment.company.companyName}}">
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label>Company phone</label>
+      <input type="email" class="form-control" readonly placeholder="{{application?.advertisment.company.phone}}">
+    </div>
+    <div class="form-group col-md-6">
+      <label>Company email</label>
+      <input type="email" class="form-control" readonly placeholder="{{application?.advertisment.company.email}}">
+    </div>
+  </div>
+
+  <hr><h5><strong>Advertisment information:</strong></h5>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label>Education</label>
+      <input type="email" class="form-control" readonly placeholder="{{application?.advertisment.education}}">
+    </div>
+    <div class="form-group col-md-6">
+      <label>City</label>
+      <input type="email" class="form-control" readonly placeholder="{{application?.advertisment.city.cityName}}">
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label>Published</label>
+      <input type="email" class="form-control" readonly placeholder="{{application?.advertisment.published | date}}">
+    </div>
+    <div class="form-group col-md-6">
+      <label>To date</label>
+      <input type="email" class="form-control" readonly placeholder="{{application?.advertisment.toDate | date}}">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label>Requirements</label>
+   <textarea id="message" type="textarea" rows="3" required class="form-control" readonly placeholder="{{application?.advertisment.requirements}}"></textarea>
+  </div>
+  <div class="form-group">
+    <label>Offers</label>
+   <textarea id="message" type="textarea" rows="3" required class="form-control" readonly placeholder="{{application?.advertisment.offers}}"></textarea>
+  </div>
+  <div class="form-group">
+    <label>Bonus skills</label>
+   <textarea id="message" type="textarea" rows="3" required class="form-control" readonly placeholder="{{application?.advertisment.bonusSkills}}"></textarea>
+  </div>
+  <div class="form-group">
+    <label>Job description</label>
+   <textarea id="message" type="textarea" rows="3" required class="form-control" readonly placeholder="{{application?.advertisment.jobDescription}}"></textarea>
+  </div>
+  <div class="form-group">
+    <label>Candidate description</label>
+   <textarea id="message" type="textarea" rows="3" required class="form-control" readonly placeholder="{{application?.advertisment.candidateDescription}}"></textarea>
+  </div>
+
+  <button id="submit" type="submit" class="btn btn-primary">Print</button>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>

@@ -36,7 +36,7 @@ import { AdminaplicationComponent } from './adminaplication/adminaplication.comp
 import { AddskillComponent } from './addskill/addskill.component';
 import { AddCategoryComponent } from './addCategory/addCategory.component';
 import { AddJobLevelComponent } from './addJobLevel/addJobLevel.component';
-
+import { AdminapplicationdetailComponent } from './adminaplication/adminapplicationdetail/adminapplicationdetail.component';
 
 
 @NgModule({
@@ -60,7 +60,8 @@ import { AddJobLevelComponent } from './addJobLevel/addJobLevel.component';
       AdminaplicationComponent,
       AddskillComponent,
       AddCategoryComponent,
-      AddJobLevelComponent
+      AddJobLevelComponent,
+      AdminapplicationdetailComponent
    ],
   imports: [
     BrowserModule,

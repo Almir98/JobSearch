@@ -45,7 +45,7 @@
   <div class="row col-sm-12 col-md-8 marginLO">
     <div class="card-block px-2">
       <a id="link" class="title">
-        <h4 class="card-title marginTop3 text-center" [routerLink]="['/advertisment/',item.advertismentId]" routerLinkActive="router-link-active" >{{item.categoryName}}</h4>
+        <h4 class="card-title marginTop3 text-center" [routerLink]="['/AdvertismentDetail/',item.advertismentId]" routerLinkActive="router-link-active" >{{item.categoryName}}</h4>
       </a>
         <p><strong>Company : </strong>{{item.company.companyName}}</p>
         <p><strong>Working time : </strong>{{item.jobType.jobTypeName}}</p>
@@ -54,7 +54,6 @@
         <p><strong>To date : </strong>{{item.toDate | date}}</p>
         <strong>Level of knowledge : </strong> <button id="button" class="btn btn-warning mr-2 mb-2" aria-readonly="true" style="font-weight:600">{{item.jobLevel.levelName}}</button>
           <br>
-          <!-- <p class="card-text" id="jobcode">Senior Software Engineer in Test 5+ years of experience ... <a href="/jobView/58awed62qwz91kpo9li3m018j" class="aNoDecor">(read more)</a></p> -->
           
           <div class="btn btn-primary mr-2 mb-2">REST</div>
           <div class="btn btn-primary mr-2 mb-2">JavaScript</div>

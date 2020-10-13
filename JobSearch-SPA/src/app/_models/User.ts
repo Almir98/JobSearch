@@ -1,6 +1,6 @@
 import {UserType} from '../_models/UserType';
 
-export interface User {
+export class User {
 
     userId: number;
     firstName: string;

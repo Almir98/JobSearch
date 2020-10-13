@@ -1,7 +1,19 @@
 <div class="container mt-5">
+  <h2 id="title">All applications</h2>
+ 
+  <div *ngFor="let item of applications" class="card" style="width: 18rem;">
+    <div class="card-body">
+        <h5 class="card-title">{{item.advertisment.categoryName}}</h5><hr>
+      <h6 class="card-subtitle mb-2 text-muted">Application date: {{item.applicationDate  | date}}</h6>
+      <h6 class="card-subtitle mb-2 text-muted">First name: {{item.user.firstName}}</h6>
+      <h6 class="card-subtitle mb-2 text-muted">Last name: {{item.user.lastName}}</h6>
+      <h6 class="card-subtitle mb-2 text-muted">City: {{item.advertisment.city.cityName}}</h6>
+      <a [routerLink]="['/ApplicationDetails/',item.applicationId]" routerLinkActive="router-link-active"  class="card-link">Click to see details</a>
+    </div>
+  </div>
 
-  <p>
-    adminaplication works!
-  </p>
+
+
+  
 </div>
   
