@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using JobSearch.WebAPI.Helpers;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -126,7 +127,8 @@ namespace JobSearch.WebAPI.Database
 
             //Users
 
-            modelBuilder.Entity<Users>().HasData(new Users()
+            //  ADMIN
+            Users user = new Users
             {
                 UserId = 1,
                 FirstName = "Admin",
@@ -137,11 +139,28 @@ namespace JobSearch.WebAPI.Database
                 YearOfBirth = new DateTime(2020, 11, 10),
                 CityId = 1,
                 GenderId = 1,
-                UserTypeId = 1,
-                //PasswordHash=,
+                UserTypeId = 1
+            };
+            user.PasswordSalt = HashGenerator.GenerateSalt();
+            user.PasswordHash = HashGenerator.GenerateHash(user.PasswordSalt, "test");
 
-            });
+            //USER
 
+            Users b = new Users
+            {
+                UserId = 1,
+                FirstName = "User",
+                LastName = "User",
+                Phone = "061333333",
+                Email = "user@hotmail",
+                Adress = "User adress",
+                YearOfBirth = new DateTime(2020, 11, 10),
+                CityId = 2,
+                GenderId = 2,
+                UserTypeId = 2
+            };
+            b.PasswordSalt = HashGenerator.GenerateSalt();
+            b.PasswordHash = HashGenerator.GenerateHash(b.PasswordSalt, "test");
 
             //JobLevel
 
@@ -243,8 +262,255 @@ namespace JobSearch.WebAPI.Database
                 CategoryName = "CTO"
             });
 
+            // COMPANY
 
 
+            modelBuilder.Entity<Company>().HasData(new Company()
+            {
+                CompanyId = 1,
+                CompanyName= "Klika",
+                Phone = "055 111",
+                Adress = "Marsala Tita",
+                AboutUs = "Very nice company",
+                Photo = "",
+                Email="test",
+                Url= "https://klika.ba/"
+            });
+
+            modelBuilder.Entity<Company>().HasData(new Company()
+            {
+                CompanyId = 2,
+                CompanyName = "MOP",
+                Phone = "055 222",
+                Adress = "Franca Lehara",
+                AboutUs = "Very nice company",
+                Email= "test",
+                Photo = "",
+                Url = "https://ministryofprogramming.com/"
+            });
+
+            modelBuilder.Entity<Company>().HasData(new Company()
+            {
+                CompanyId = 3,
+                CompanyName = "Evona",
+                Phone = "055 333",
+                Adress = "Blajburska ulica bb",
+                AboutUs = "Very nice company",
+                Photo = "",
+                Email = "test",
+                Url = "https://www.evona.sk/"
+            });
+
+            modelBuilder.Entity<Company>().HasData(new Company()
+            {
+                CompanyId = 4,
+                CompanyName = "Mistral",
+                Phone = "055 444",
+                Adress = "Skenderija",
+                AboutUs = "Very nice company",
+                Email="",
+                Photo = "",
+                Url = "https://www.mistral.ba/"
+            });
+
+            modelBuilder.Entity<Company>().HasData(new Company()
+            {
+                CompanyId = 5,
+                CompanyName = "QSS",
+                Phone = "055 555",
+                Adress = "Skenderija",
+                AboutUs = "Very nice company",
+                Email= "test",
+                Photo = "",
+                Url = "https://www.qss.ba/"
+            });
+
+            // Skill
+
+            modelBuilder.Entity<Skill>().HasData(new Skill()
+            {
+                SkillId = 1,
+                SkillName = "OOP"
+            });
+
+            modelBuilder.Entity<Skill>().HasData(new Skill()
+            {
+                SkillId = 2,
+                SkillName = ".NET Core"
+            });
+
+            modelBuilder.Entity<Skill>().HasData(new Skill()
+            {
+                SkillId = 3,
+                SkillName = "Angular"
+            });
+
+            modelBuilder.Entity<Skill>().HasData(new Skill()
+            {
+                SkillId = 4,
+                SkillName = "C++"
+            });
+
+            modelBuilder.Entity<Skill>().HasData(new Skill()
+            {
+                SkillId = 5,
+                SkillName = "C#"
+            });
+
+            modelBuilder.Entity<Skill>().HasData(new Skill()
+            {
+                SkillId = 6,
+                SkillName = "Java"
+            });
+
+            modelBuilder.Entity<Skill>().HasData(new Skill()
+            {
+                SkillId = 7,
+                SkillName = "IoT"
+            });
+
+            modelBuilder.Entity<Skill>().HasData(new Skill()
+            {
+                SkillId = 8,
+                SkillName = "Azure"
+            });
+
+            modelBuilder.Entity<Skill>().HasData(new Skill()
+            {
+                SkillId = 9,
+                SkillName = "Docker"
+            });
+
+            modelBuilder.Entity<Skill>().HasData(new Skill()
+            {
+                SkillId = 10,
+                SkillName = "HTML"
+            });
+
+            modelBuilder.Entity<Skill>().HasData(new Skill()
+            {
+                SkillId = 11,
+                SkillName = "CSS"
+            });
+
+            modelBuilder.Entity<Skill>().HasData(new Skill()
+            {
+                SkillId = 12,
+                SkillName = "Java Script"
+            });
+
+            modelBuilder.Entity<Skill>().HasData(new Skill()
+            {
+                SkillId = 13,
+                SkillName = "REST API"
+            });
+
+            modelBuilder.Entity<Skill>().HasData(new Skill()
+            {
+                SkillId = 14,
+                SkillName = "GIT"
+            });
+
+            modelBuilder.Entity<Skill>().HasData(new Skill()
+            {
+                SkillId = 15,
+                SkillName = "TFS"
+            });
+
+            modelBuilder.Entity<Skill>().HasData(new Skill()
+            {
+                SkillId = 16,
+                SkillName = "SQL"
+            });
+
+            modelBuilder.Entity<Skill>().HasData(new Skill()
+            {
+                SkillId = 17,
+                SkillName = "Agile"
+            });
+
+            modelBuilder.Entity<Skill>().HasData(new Skill()
+            {
+                SkillId = 18,
+                SkillName = "Scrum"
+            });
+
+            modelBuilder.Entity<Skill>().HasData(new Skill()
+            {
+                SkillId = 19,
+                SkillName = "Unit Testing"
+            });
+
+            modelBuilder.Entity<Skill>().HasData(new Skill()
+            {
+                SkillId = 20,
+                SkillName = "Mongo Db"
+            });
+
+            modelBuilder.Entity<Skill>().HasData(new Skill()
+            {
+                SkillId = 21,
+                SkillName = "Node.js"
+            });
+
+            modelBuilder.Entity<Skill>().HasData(new Skill()
+            {
+                SkillId = 22,
+                SkillName = "React"
+            });
+
+            modelBuilder.Entity<Skill>().HasData(new Skill()
+            {
+                SkillId = 23,
+                SkillName = "GitHub"
+            });
+
+            modelBuilder.Entity<Skill>().HasData(new Skill()
+            {
+                SkillId = 24,
+                SkillName = "Linux"
+            });
+
+            modelBuilder.Entity<Skill>().HasData(new Skill()
+            {
+                SkillId = 25,
+                SkillName = "Python"
+            });
+
+            modelBuilder.Entity<Skill>().HasData(new Skill()
+            {
+                SkillId = 26,
+                SkillName = "SDLC"
+            });
+
+            // ADVERTISMENT
+
+            //modelBuilder.Entity<Advertisment>().HasData(new Advertisment()
+            //{
+
+            //});
+
+
+
+
+
+
+
+
+
+
+
+
+            // Application
+
+            //modelBuilder.Entity<Application>().HasData(new Application()
+            //{
+            //    ApplicationId = 1,
+            //    ApplicationDate = new DateTime(2020, 11, 10),
+            //    Description = "Application for job",
+            //    UserId = 2,
+            //    AdvertismentId = 1
+            //});
 
 
 
