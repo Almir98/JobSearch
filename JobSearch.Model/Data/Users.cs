@@ -12,8 +12,8 @@ namespace JobSearch.Model
         public string Email { get; set; }
         public string Adress { get; set; }
         public DateTime? YearOfBirth { get; set; }
-        public byte[] PasswordHash { get; set; }
-        public byte[] PasswordSalt { get; set; }
+        public string PasswordHash { get; set; }
+        public string PasswordSalt { get; set; }
         public int? CityId { get; set; }
         public int? GenderId { get; set; }
         public int? UserTypeId { get; set; }

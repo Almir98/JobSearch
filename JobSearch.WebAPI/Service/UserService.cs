@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using JobSearch.WebAPI.Database;
+using JobSearch.WebAPI.Helpers;
 using JobSearch.WebAPI.Interface;
 using JobSearch.WebAPI.ViewModels;
 using Microsoft.AspNetCore.Mvc;
@@ -21,7 +22,7 @@ namespace JobSearch.WebAPI.Service
             _mapper = mapper;
         }
 
-        private void CreatePasswordHash(string password, out byte[] passwordHash, out byte[] passwordSalt)
+        public void CreatePasswordHash(string password, out byte[] passwordHash, out byte[] passwordSalt)
         {
             using (var hmac = new System.Security.Cryptography.HMACSHA512())
             {
@@ -29,6 +30,7 @@ namespace JobSearch.WebAPI.Service
                 passwordHash = hmac.ComputeHash(System.Text.Encoding.UTF8.GetBytes(password));
             }
         }
+
         private bool VerifyPasswordHash(string password, byte[] passwordHash, byte[] passwordSalt)
         {
             using (var hmac = new System.Security.Cryptography.HMACSHA512(passwordSalt))
@@ -48,33 +50,46 @@ namespace JobSearch.WebAPI.Service
 
         public Model.Users Login(string email,string password)
         {
-            var request = _context.Users.FirstOrDefault(x => x.Email == email);
-            if (request == null)
-                return null;
-            else
+            var customer = _context.Users.FirstOrDefault(x => x.Email == email);
+            if (customer != null)
             {
-                if (!VerifyPasswordHash(password, request.PasswordHash, request.PasswordSalt))
+                var newHash = HashGenerator.GenerateHash(customer.PasswordSalt, password);
+
+                if (customer.PasswordHash == newHash)
                 {
-                    return null;
+                    return _mapper.Map<Model.Users>(customer);
                 }
-                return _mapper.Map<Model.Users>(request);
             }
+            return null;
         }
 
-        public Model.Users Register(UserVM req,string password)
+        public Model.Users Register(UserVM request,string password)
         {
-            byte[] passwordHash, passwordSalt;
-            var user = _mapper.Map<Database.Users>(req);
+            //byte[] passwordHash, passwordSalt;
+            //var user = _mapper.Map<Database.Users>(req);
 
-            CreatePasswordHash(password, out passwordHash, out passwordSalt);
+            //CreatePasswordHash(password, out passwordHash, out passwordSalt);
 
-            user.PasswordHash = passwordHash;
-            user.PasswordSalt = passwordSalt;
+            //user.PasswordHash = passwordHash;
+            //user.PasswordSalt = passwordSalt;
 
-             _context.Users.Add(user);
-             _context.SaveChanges();
+            // _context.Users.Add(user);
+            // _context.SaveChanges();
 
-            return _mapper.Map<Model.Users>(user);
+
+            var entity = _mapper.Map<Users>(request);
+
+            if (request.Password != request.PasswordConfirm)
+            {
+                throw new Exception("Password and password confirm not matched !");
+            }
+            entity.PasswordSalt = HashGenerator.GenerateSalt();
+            entity.PasswordHash = HashGenerator.GenerateHash(entity.PasswordSalt, request.Password);
+
+            _context.Add(entity);
+            _context.SaveChanges();
+            
+            return _mapper.Map<Model.Users>(entity);
         }
 
         public bool UserExist(string email)

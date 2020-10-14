@@ -124,6 +124,25 @@ namespace JobSearch.WebAPI.Database
                 CountryId = 4
             });
 
+            //Users
+
+            modelBuilder.Entity<Users>().HasData(new Users()
+            {
+                UserId = 1,
+                FirstName = "Admin",
+                LastName = "Admin",
+                Phone = "06211111",
+                Email = "admin@hotmail",
+                Adress = "Test adress",
+                YearOfBirth = new DateTime(2020, 11, 10),
+                CityId = 1,
+                GenderId = 1,
+                UserTypeId = 1,
+                //PasswordHash=,
+
+            });
+
+
             //JobLevel
 
             modelBuilder.Entity<JobLevel>().HasData(new JobLevel()

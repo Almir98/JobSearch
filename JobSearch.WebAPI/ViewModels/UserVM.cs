@@ -18,5 +18,6 @@ namespace JobSearch.WebAPI.ViewModels
         public int? GenderId { get; set; }
         public int? UserTypeId { get; set; }
         public string Password { get; set; }
+        public string PasswordConfirm { get; set; }
     }
 }

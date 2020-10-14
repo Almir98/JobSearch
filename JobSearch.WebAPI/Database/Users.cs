@@ -21,8 +21,8 @@ namespace JobSearch.WebAPI.Database
         public int? CityId { get; set; }
         public int? GenderId { get; set; }
         public int? UserTypeId { get; set; }
-        public byte[] PasswordHash { get; set; }
-        public byte[] PasswordSalt { get; set; }
+        public string PasswordHash { get; set; }
+        public string PasswordSalt { get; set; }
 
         public virtual City City { get; set; }
         public virtual Gender Gender { get; set; }

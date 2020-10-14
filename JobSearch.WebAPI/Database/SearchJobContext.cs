@@ -256,6 +256,10 @@ namespace JobSearch.WebAPI.Database
                     .IsRequired()
                     .HasMaxLength(50);
 
+                entity.Property(e => e.PasswordHash).HasMaxLength(500);
+
+                entity.Property(e => e.PasswordSalt).HasMaxLength(500);
+
                 entity.Property(e => e.Phone)
                     .IsRequired()
                     .HasMaxLength(50);

@@ -42,7 +42,8 @@ namespace JobSearch.WebAPI.Controllers
                 CityId = newUser.CityId,
                 GenderId = newUser.GenderId,
                 UserTypeId = newUser.UserTypeId,
-                Password = newUser.Password
+                Password = newUser.Password,
+                PasswordConfirm=newUser.PasswordConfirm
             };
             var createdUser = _service.Register(user, newUser.Password);
             return StatusCode(201);
