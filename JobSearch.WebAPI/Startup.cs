@@ -72,7 +72,7 @@ namespace JobSearch.WebAPI
 
             // Repository pattern
             services.AddScoped<IUserRepository,UserService>();
-
+            services.AddScoped<IComapany, CompanyService>();
             // Get and GetById services
 
             services.AddScoped<IService<Model.City, object>, BaseService<Model.City, object, Database.City>>();
@@ -88,7 +88,7 @@ namespace JobSearch.WebAPI
             services.AddScoped<ICRUDService<Model.Application, object, ApplicationUpsertVM, ApplicationUpsertVM>, ApplicationService>();
             services.AddScoped<ICRUDService<Model.City, object, CityUpsertVM, CityUpsertVM>, CityService>();
             services.AddScoped<ICRUDService<Model.JobType, object, JobTypeUpsertVM, JobTypeUpsertVM>, JobTypeService>();
-            services.AddScoped<ICRUDService<Model.Company, object, CompanyUpsertVM, CompanyUpsertVM>, CompanyService>();
+            //services.AddScoped<ICRUDService<Model.Company, object, CompanyUpsertVM, CompanyUpsertVM>, CompanyServi>();
             services.AddScoped<ICRUDService<Model.Skill, object, SkillUpsert, SkillUpsert>, SkillService>();
 
             services.AddScoped<ICRUDService<Model.Category, object, CategoryUpsertVM, CategoryUpsertVM>, CategoryService>();
@@ -104,6 +104,8 @@ namespace JobSearch.WebAPI
             }
             else
             {
+                app.UseHsts();
+
                 //Global exception Handling in .NET Core
 
                 app.UseExceptionHandler(builder => builder.Run(async context => {
@@ -126,6 +128,7 @@ namespace JobSearch.WebAPI
             app.UseRouting();
             app.UseAuthentication();
             app.UseAuthorization();
+            app.UseStaticFiles();
 
             app.UseSwagger()
                 .UseSwaggerUI(c =>
@@ -136,6 +139,11 @@ namespace JobSearch.WebAPI
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+            });
+
+            app.Run(async (context) =>
+            {
+                await context.Response.WriteAsync("Could not find anything");
             });
         }
     }

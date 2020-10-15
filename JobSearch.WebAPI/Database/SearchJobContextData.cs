@@ -265,65 +265,65 @@ namespace JobSearch.WebAPI.Database
             // COMPANY
 
 
-            modelBuilder.Entity<Company>().HasData(new Company()
-            {
-                CompanyId = 1,
-                CompanyName= "Klika",
-                Phone = "055 111",
-                Adress = "Marsala Tita",
-                AboutUs = "Very nice company",
-                Photo = "",
-                Email="test",
-                Url= "https://klika.ba/"
-            });
+            //modelBuilder.Entity<Company>().HasData(new Company()
+            //{
+            //    CompanyId = 1,
+            //    CompanyName= "Klika",
+            //    Phone = "055 111",
+            //    Adress = "Marsala Tita",
+            //    AboutUs = "Very nice company",
+            //    Photo = "",
+            //    Email="test",
+            //    Url= "https://klika.ba/"
+            //});
 
-            modelBuilder.Entity<Company>().HasData(new Company()
-            {
-                CompanyId = 2,
-                CompanyName = "MOP",
-                Phone = "055 222",
-                Adress = "Franca Lehara",
-                AboutUs = "Very nice company",
-                Email= "test",
-                Photo = "",
-                Url = "https://ministryofprogramming.com/"
-            });
+            //modelBuilder.Entity<Company>().HasData(new Company()
+            //{
+            //    CompanyId = 2,
+            //    CompanyName = "MOP",
+            //    Phone = "055 222",
+            //    Adress = "Franca Lehara",
+            //    AboutUs = "Very nice company",
+            //    Email= "test",
+            //    Photo = "",
+            //    Url = "https://ministryofprogramming.com/"
+            //});
 
-            modelBuilder.Entity<Company>().HasData(new Company()
-            {
-                CompanyId = 3,
-                CompanyName = "Evona",
-                Phone = "055 333",
-                Adress = "Blajburska ulica bb",
-                AboutUs = "Very nice company",
-                Photo = "",
-                Email = "test",
-                Url = "https://www.evona.sk/"
-            });
+            //modelBuilder.Entity<Company>().HasData(new Company()
+            //{
+            //    CompanyId = 3,
+            //    CompanyName = "Evona",
+            //    Phone = "055 333",
+            //    Adress = "Blajburska ulica bb",
+            //    AboutUs = "Very nice company",
+            //    Photo = "",
+            //    Email = "test",
+            //    Url = "https://www.evona.sk/"
+            //});
 
-            modelBuilder.Entity<Company>().HasData(new Company()
-            {
-                CompanyId = 4,
-                CompanyName = "Mistral",
-                Phone = "055 444",
-                Adress = "Skenderija",
-                AboutUs = "Very nice company",
-                Email="",
-                Photo = "",
-                Url = "https://www.mistral.ba/"
-            });
+            //modelBuilder.Entity<Company>().HasData(new Company()
+            //{
+            //    CompanyId = 4,
+            //    CompanyName = "Mistral",
+            //    Phone = "055 444",
+            //    Adress = "Skenderija",
+            //    AboutUs = "Very nice company",
+            //    Email="",
+            //    Photo = "",
+            //    Url = "https://www.mistral.ba/"
+            //});
 
-            modelBuilder.Entity<Company>().HasData(new Company()
-            {
-                CompanyId = 5,
-                CompanyName = "QSS",
-                Phone = "055 555",
-                Adress = "Skenderija",
-                AboutUs = "Very nice company",
-                Email= "test",
-                Photo = "",
-                Url = "https://www.qss.ba/"
-            });
+            //modelBuilder.Entity<Company>().HasData(new Company()
+            //{
+            //    CompanyId = 5,
+            //    CompanyName = "QSS",
+            //    Phone = "055 555",
+            //    Adress = "Skenderija",
+            //    AboutUs = "Very nice company",
+            //    Email= "test",
+            //    Photo = "",
+            //    Url = "https://www.qss.ba/"
+            //});
 
             // Skill
 

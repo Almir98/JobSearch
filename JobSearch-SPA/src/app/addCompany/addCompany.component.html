@@ -28,6 +28,11 @@
       <input type="text" class="form-control" required name="adress" [(ngModel)]="company.adress">
     </div>
 
+    <div class="form-group col-md-8 mt-4">
+      <label>Company Url<span class="required"> *</span></label>
+      <input type="text" class="form-control" required name="url" [(ngModel)]="company.url">
+    </div>
+
     <div class="form-group col-md-8 mt-4 mb-4">
       <label>About us</label><span class="required"> *</span>
      <textarea id="message" type="textarea" required class="form-control" name="message" [(ngModel)]="company.aboutUs"></textarea>
@@ -37,7 +42,7 @@
       <label>Photo</label><span class="required"> *</span>
       <div class="custom-file">
         <input type="file" class="custom-file-input" name="photo" [(ngModel)]="company.photo">
-        <label class="custom-file-label">{{company?.photo}}</label>
+        <label class="custom-file-label">{{company?.photo | slice:12}}</label>
       </div>
     </div>
 
