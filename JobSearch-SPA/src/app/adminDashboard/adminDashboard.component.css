@@ -13,8 +13,8 @@ p{
 }
 
 .card{
-    width: 47%;
-    display: inline-block;
+    margin-left: 5%;
+    margin-bottom: 5%;
 }
 
 h5{

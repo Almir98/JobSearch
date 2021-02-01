@@ -1,6 +1,6 @@
 import {Country} from '.././_models/Country';
 
-export interface City {
+export class City {
 
     cityId :number;
     cityName: string;
