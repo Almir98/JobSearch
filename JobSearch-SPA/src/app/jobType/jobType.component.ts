@@ -13,25 +13,41 @@ import { JobTypeService} from '../_services/jobType.service';
 export class JobTypeComponent implements OnInit {
 
   jobType: JobType = new JobType();
+  jobForm: FormGroup;
 
-  constructor(private alertify: AlertifyService, private router:Router,private jobTypeService: JobTypeService)
+  constructor(private alertify: AlertifyService, private router:Router,private jobTypeService: JobTypeService, private fb: FormBuilder)
   {
   }
 
   ngOnInit() {
+
+    this.jobForm = this.fb.group ({
+
+      spanJobName:['',Validators.required]
+    });
+
+  }
+
+  public get getFormControl() {
+    return this.jobForm.controls;
   }
 
   addJobType()
   {
-     this.jobTypeService.insert(this.jobType).subscribe((data:JobType) => {
-      
-       this.jobType=data;
-       console.log(this.jobType);
+    if(this.jobForm.valid)
+    {
+      this.jobType.jobTypeName = this.getFormControl.spanJobName.value;
 
-       this.alertify.success("Successfully added");
-       this.router.navigate(['/admin']);
-     },erorr=>{
-       this.alertify.error("Something went wrong");
-     })
+      this.jobTypeService.insert(this.jobType).subscribe((data:JobType) => {
+        
+        this.jobType=data;
+        this.alertify.success("Successfully added");
+        this.router.navigate(['/admin']);
+      });
+    }
+    else{
+      this.alertify.error("Something went wrong");
+      this.jobForm.markAllAsTouched();
+    }
   }
 }

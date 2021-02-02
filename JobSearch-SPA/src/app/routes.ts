@@ -41,18 +41,9 @@ export const appRoutes: Routes = [
     {path:'AddJobLevel',component: AddJobLevelComponent},
     {path:'ApplicationDetails/:id',component: AdminapplicationdetailComponent},
 
-
-
-    
-
-
-
     {path:'application/:id',component:ApplicationComponent},
-
     {path:'EditProfile',component:UserEditComponent,canActivate:[AuthGuard]},
-
     {path:'**', redirectTo:'home',pathMatch:'full'}
-
 ];
 
 

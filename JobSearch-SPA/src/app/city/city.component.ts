@@ -52,7 +52,6 @@ export class CityComponent implements OnInit {
       this.city.cityName = this.getFormControl.spancityName.value;
       this.city.zipCode = this.getFormControl.spanzipCode.value;
       this.city.countryId = this.getFormControl.spancountryId.value;
-      console.log(this.city);
 
       this.cityService.insert(this.city).subscribe(data =>{
   

@@ -1,15 +1,18 @@
 <div class="container mt-5">
   <h2 id="title">Add new job type</h2>
   <div class="col-sm-13">
-    <div *ngIf="addJob.dirty" class="alert alert-info">
+    <div *ngIf="jobForm.dirty" class="alert alert-info">
       <p><strong>Information:</strong> You have made changes. Any unsaved changes will be lost!</p>
     </div>
   </div>
-  <form #addJob="ngForm" (ngSubmit)="addJobType()">
+  <form [formGroup]="jobForm" (ngSubmit)="addJobType()">
     <div class="form-group col-md-8 mt-4">
       <label>Type name<span class="required"> *</span></label>
-      <input type="text" class="form-control" required name="jobType.jobTypeName" [(ngModel)]="jobType.jobTypeName">
+      <input type="text" class="form-control" required formControlName="spanJobName">
+      <span class="text-danger" *ngIf="getFormControl.spanJobName.touched && getFormControl.spanJobName.errors?.required">
+        Field 'Type name' is required.'
+      </span>
     </div>
-    <button [disabled]="!addJob.valid" class="btn btn-primary mt-4 " id="submit" >Save</button>
+    <button class="btn btn-primary mt-4 " id="submit" >Save</button>
   </form>
 </div>
